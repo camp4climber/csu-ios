@@ -11,12 +11,9 @@
 #import "math.h"
 #import <QuartzCore/QuartzCore.h>
 
-typedef enum{ Plus,Minus,Multiply,Divide,Raise } Operation;
-
 @interface CalculatorViewController ()
     @property (nonatomic, strong) Calculator *calc;
-    @property (nonatomic) Operation op;
-    @property (nonatomic) NSNumber *storage;
+    @property (nonatomic) NSString *text;
 @end
 
 @implementation CalculatorViewController
@@ -34,6 +31,11 @@ typedef enum{ Plus,Minus,Multiply,Divide,Raise } Operation;
     self.display.layer.borderColor = [UIColor grayColor].CGColor;
     self.display.layer.borderWidth = 1.0;
     self.display.layer.cornerRadius = 5;
+    
+    self.calc.currentNumber = @0;
+    self.calc.number2 = @0;
+    self.calc.result = @0;
+    self.text = @"0";
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,257 +46,371 @@ typedef enum{ Plus,Minus,Multiply,Divide,Raise } Operation;
 
 - (IBAction)numberPressed:(UIButton *)sender
 {
-    NSString *text = @"";
-    
     switch (sender.tag) {
         case 0:
-            text = [self.display.text stringByAppendingString:@"0"];
+            if ([self.display.text isEqual:@"0"])
+            {
+                self.text = @"0";
+            }
+            else
+            {
+                self.text = [self.text stringByAppendingString:@"0"];
+            }
             break;
         case 1:
-            text = [self.display.text stringByAppendingString:@"1"];
+            if ([self.display.text isEqual:@"0"])
+            {
+                self.text = @"1";
+            }
+            else
+            {
+            self.text = [self.text stringByAppendingString:@"1"];
+            }
             break;
         case 2:
-            text = [self.display.text stringByAppendingString:@"2"];
+            if ([self.display.text isEqual:@"0"])
+            {
+                self.text = @"2";
+            }
+            else
+            {
+                self.text = [self.text stringByAppendingString:@"2"];
+            }
             break;
         case 3:
-            text = [self.display.text stringByAppendingString:@"3"];
+            if ([self.display.text isEqual:@"0"])
+            {
+                self.text = @"3";
+            }
+            else
+            {
+                self.text = [self.text stringByAppendingString:@"3"];
+            }
             break;
         case 4:
-            text = [self.display.text stringByAppendingString:@"4"];
+            if ([self.display.text isEqual:@"0"])
+            {
+                self.text = @"4";
+            }
+            else
+            {
+                self.text = [self.text stringByAppendingString:@"4"];
+            }
             break;
         case 5:
-            text = [self.display.text stringByAppendingString:@"5"];
+            if ([self.display.text isEqual:@"0"])
+            {
+                self.text = @"5";
+            }
+            else
+            {
+                self.text = [self.text stringByAppendingString:@"5"];
+            }
             break;
         case 6:
-            text = [self.display.text stringByAppendingString:@"6"];
+            if ([self.display.text isEqual:@"0"])
+            {
+                self.text = @"6";
+            }
+            else
+            {
+                self.text = [self.text stringByAppendingString:@"6"];
+            }
             break;
         case 7:
-            text = [self.display.text stringByAppendingString:@"7"];
+            if ([self.display.text isEqual:@"0"])
+            {
+                self.text = @"7";
+            }
+            else
+            {
+                self.text = [self.text stringByAppendingString:@"7"];
+            }
             break;
         case 8:
-            text = [self.display.text stringByAppendingString:@"8"];
+            if ([self.display.text isEqual:@"0"])
+            {
+                self.text = @"8";
+            }
+            else
+            {
+                self.text = [self.text stringByAppendingString:@"8"];
+            }
             break;
         case 9:
-            text = [self.display.text stringByAppendingString:@"9"];
+            if ([self.display.text isEqual:@"0"])
+            {
+                self.text = @"9";
+            }
+            else
+            {
+                self.text = [self.text stringByAppendingString:@"9"];
+            }
             break;
         default:
             break;
     }
     
-    [self updateUI:text];
+    [self updateUI:self.text];
 }
 
 - (IBAction)operationPressed:(UIButton *)sender
 {
-    NSString *text = @"0";
     self.calc.currentNumber = @([self.display.text doubleValue]);
+    id plusButton = [self.view viewWithTag:22];
+    id minButton = [self.view viewWithTag:23];
+    id multButton = [self.view viewWithTag:24];
+    id divButton = [self.view viewWithTag:25];
+    id powButton = [self.view viewWithTag:27];
+
     
+
     switch (sender.tag) {
         //multiply current number by pi
         case 10:
-            self.calc.result = [self.calc multiply:self.calc.currentNumber with:@M_PI];
+            self.calc.result = [self.calc unaryFunction:@"pi" withNumber:self.calc.currentNumber];
             self.calc.currentNumber = self.calc.result;
-            text = [self.calc.result description];
+            self.text = [self.calc.result description];
+            self.calc.result = @0;
+            [self updateUI:self.text];
             break;
         //multiply current number by e
         case 11:
-            self.calc.result = [self.calc multiply:self.calc.currentNumber with:@M_E];
+            self.calc.result = [self.calc unaryFunction:@"e" withNumber:self.calc.currentNumber];
             self.calc.currentNumber = self.calc.result;
-            text = [self.calc.result description];
+            self.text = [self.calc.result description];
+            self.calc.result = @0;
+            [self updateUI:self.text];
             break;
         //clear
         case 12:
             self.calc.currentNumber = @0;
+            self.calc.number2 = @0;
             self.calc.result = @0;
-            self.storage = @0;
-            text = @"";
+            self.text = @"0";
+            [self updateUI:self.text];
         //sine
         case 13:
-            self.calc.result = @(sin([self.calc.currentNumber doubleValue]));
+            self.calc.result = [self.calc trigFunction:@"sin" withNumber:self.calc.currentNumber];
             self.calc.currentNumber = self.calc.result;
-            text = [self.calc.result description];
+            self.text = [self.calc.result description];
             self.calc.result = @0;
+            [self updateUI:self.text];
             break;
         //cosine
         case 14:
-            self.calc.result = @(cos([self.calc.currentNumber doubleValue]));
+            self.calc.result = [self.calc trigFunction:@"cos" withNumber:self.calc.currentNumber];
             self.calc.currentNumber = self.calc.result;
-            text = [self.calc.result description];
+            self.text = [self.calc.result description];
             self.calc.result = @0;
+            [self updateUI:self.text];
             break;
         //tangent
         case 15:
-            self.calc.result = @(tan([self.calc.currentNumber doubleValue]));
+            self.calc.result = [self.calc trigFunction:@"tan" withNumber:self.calc.currentNumber];
             self.calc.currentNumber = self.calc.result;
-            text = [self.calc.result description];
+            self.text = [self.calc.result description];
             self.calc.result = @0;
+            [self updateUI:self.text];
             break;
         //secant
         case 16:
-            self.calc.result = @(1/sin([self.calc.currentNumber doubleValue]));
+            self.calc.result = [self.calc trigFunction:@"sec" withNumber:self.calc.currentNumber];
             self.calc.currentNumber = self.calc.result;
-            text = [self.calc.result description];
+            self.text = [self.calc.result description];
             self.calc.result = @0;
+            [self updateUI:self.text];
             break;
         //cosecant
         case 17:
-            self.calc.result = @(1/cos([self.calc.currentNumber doubleValue]));
+            self.calc.result = [self.calc trigFunction:@"csc" withNumber:self.calc.currentNumber];
             self.calc.currentNumber = self.calc.result;
-            text = [self.calc.result description];
+            self.text = [self.calc.result description];
             self.calc.result = @0;
+            [self updateUI:self.text];
             break;
         //cotangent
         case 18:
-            self.calc.result = @(1/tan([self.calc.currentNumber doubleValue]));
+            self.calc.result = [self.calc trigFunction:@"cot" withNumber:self.calc.currentNumber];
             self.calc.currentNumber = self.calc.result;
-            text = [self.calc.result description];
+            self.text = [self.calc.result description];
             self.calc.result = @0;
+            [self updateUI:self.text];
             break;
         //memory store
         case 19:
             self.calc.memoryValue = self.calc.currentNumber;
-            text = [self.calc.currentNumber description];
             break;
         //memory recall
         case 20:
             self.calc.currentNumber = self.calc.memoryValue;
-            text = [self.calc.currentNumber description];
+            self.text = [self.calc.currentNumber description];
+            [self updateUI:self.text];
             break;
         //memory clear
         case 21:
             self.calc.memoryValue = @0;
-            text = [self.calc.currentNumber description];
             break;
         //add
         case 22:
-            self.op = Plus;
-            self.storage = [self.calc add:self.calc.currentNumber with:self.calc.result];
-            self.calc.result = self.storage;
+            
+            if (![sender isSelected])
+            {
+                [sender setSelected:YES];
+                [powButton setSelected:NO];
+                [minButton setSelected:NO];
+                [multButton setSelected:NO];
+                [divButton setSelected:NO];
+            }
+            else
+            {
+                [sender setSelected:NO];
+            }
+            
+            self.calc.operation = @"+";
+            self.calc.number2 = [self.calc performOperation];
             self.calc.currentNumber = @0;
-            text = @"";
+            self.text = @"";
             break;
         //subtract
         case 23:
-            self.op = Minus;
-            if(self.calc.result==0)
+            
+            if (![sender isSelected])
             {
-                self.storage = [self.calc subtract:self.calc.result from:self.calc.currentNumber];
+                [sender setSelected:YES];
+                [plusButton setSelected:NO];
+                [powButton setSelected:NO];
+                [multButton setSelected:NO];
+                [divButton setSelected:NO];
             }
             else
             {
-                self.storage = [self.calc subtract:self.calc.currentNumber from:self.calc.result];
+                [sender setSelected:NO];
             }
-            self.calc.result = self.storage;
+            
+            self.calc.operation = @"-";
+            self.calc.number2 = [self.calc performOperation];
             self.calc.currentNumber = @0;
-            text = @"";
+            self.text = @"";
             break;
         //multiply
         case 24:
-            self.op = Multiply;
-            if (self.calc.result != 0)
+            
+            if (![sender isSelected])
             {
-                self.storage = [self.calc multiply:self.calc.currentNumber with:self.calc.result];
+                [sender setSelected:YES];
+                [plusButton setSelected:NO];
+                [minButton setSelected:NO];
+                [powButton setSelected:NO];
+                [divButton setSelected:NO];
             }
             else
             {
-                self.storage = self.calc.currentNumber;
+                [sender setSelected:NO];
             }
-            self.calc.result = self.storage;
-            text = @"";
+            
+            self.calc.operation = @"*";
             break;
         //divide
         case 25:
-            self.op = Divide;
-            if (self.calc.result != 0)
+            
+            if (![sender isSelected])
             {
-                self.storage = [self.calc divide:self.calc.currentNumber by:self.calc.result];
-            }
-            self.calc.result = self.storage;
-            text = @"";
-            break;
-        //square root
-        case 26:
-            self.calc.currentNumber = @(sqrt([self.calc.currentNumber doubleValue]));
-            text = [self.calc.currentNumber description];
-            break;
-        //exponent
-        case 27:
-            self.op = Raise;
-            if (self.calc.result == @0)
-            {
-                self.storage = self.calc.currentNumber;
+                [sender setSelected:YES];
+                [plusButton setSelected:NO];
+                [minButton setSelected:NO];
+                [multButton setSelected:NO];
+                [powButton setSelected:NO];
             }
             else
             {
-                self.storage = [self.calc raise:self.calc.currentNumber toPower:self.calc.result];
+                [sender setSelected:NO];
             }
-            self.calc.result = self.storage;
-            text = @"";
+            
+            self.calc.operation = @"/";
+            break;
+        //square root
+        case 26:
+            self.calc.result = [self.calc unaryFunction:@"sqrt" withNumber:self.calc.currentNumber];
+            self.calc.currentNumber = self.calc.result;
+            self.text = [self.calc.result description];
+            self.calc.result = @0;
+            [self updateUI:self.text];
+            break;
+        //exponent
+        case 27:
+            
+            if (![sender isSelected])
+            {
+                [sender setSelected:YES];
+                [plusButton setSelected:NO];
+                [minButton setSelected:NO];
+                [multButton setSelected:NO];
+                [divButton setSelected:NO];
+            }
+            else
+            {
+                [sender setSelected:NO];
+            }
+            
+            self.calc.operation = @"^";
             break;
         //equals
         case 28:
-            switch (self.op) {
-                case Plus:
-                    self.calc.result = [self.calc add:self.calc.currentNumber with:self.storage];
-                    text = [self.calc.result description];
-                    break;
-                case Minus:
-                    self.calc.result = [self.calc subtract:self.calc.currentNumber from:self.storage];
-                    text = [self.calc.result description];
-                    break;
-                case Multiply:
-                    self.calc.result = [self.calc multiply:self.calc.currentNumber with:self.storage];
-                    text = [self.calc.result description];
-                    break;
-                case Divide:
-                    self.calc.result = [self.calc divide:self.calc.currentNumber by:self.storage];
-                    text = [self.calc.result description];
-                    break;
-                case Raise:
-                    self.calc.result = [self.calc raise:self.storage toPower:self.calc.currentNumber];
-                    text = [self.calc.result description];
-                    break;
-                default:
-                    break;
-            }
+    
+            [powButton setSelected:NO];
+            [plusButton setSelected:NO];
+            [minButton setSelected:NO];
+            [multButton setSelected:NO];
+            [divButton setSelected:NO];
+                
+            self.calc.result = [self.calc performOperation];
+            self.text = [self.calc.result description];
+            self.calc.currentNumber = @0;
+            [self updateUI:self.text];
             break;
         //plusminus
         case 29:
-            self.calc.currentNumber = @(-([self.calc.currentNumber doubleValue]));
-            text = [self.calc.currentNumber description];
+            self.calc.result = [self.calc unaryFunction:@"plusminus" withNumber:self.calc.currentNumber];
+            self.calc.currentNumber = self.calc.result;
+            self.text = [self.calc.result description];
+            self.calc.result = @0;
+            [self updateUI:self.text];
             break;
         //decimal
         case 30:
             if ([self.display.text rangeOfString:@"."].length > 0) {
                 break;
             }
-            text = [self.display.text stringByAppendingString:@"."];
+            self.text = [self.display.text stringByAppendingString:@"."];
             break;
         //LOG
         case 31:
-            self.calc.result = @(log10([self.calc.currentNumber doubleValue]));
+            self.calc.result = [self.calc unaryFunction:@"log" withNumber:self.calc.currentNumber];
             self.calc.currentNumber = self.calc.result;
-            text = [self.calc.result description];
+            self.text = [self.calc.result description];
             self.calc.result = @0;
+            [self updateUI:self.text];
             break;
         //LN
         case 32:
-            self.calc.result = @(log([self.calc.currentNumber doubleValue]));
+            self.calc.result = [self.calc unaryFunction:@"ln" withNumber:self.calc.currentNumber];
             self.calc.currentNumber = self.calc.result;
-            text = [self.calc.result description];
+            self.text = [self.calc.result description];
             self.calc.result = @0;
+            [self updateUI:self.text];
             break;
         //reciprocal
         case 33:
-            self.calc.result = @(1/[self.calc.currentNumber doubleValue]);
+            self.calc.result = [self.calc unaryFunction:@"reciprocal" withNumber:self.calc.currentNumber];
             self.calc.currentNumber = self.calc.result;
-            text = [self.calc.result description];
+            self.text = [self.calc.result description];
             self.calc.result = @0;
+            [self updateUI:self.text];
             break;
         default:
             break;
     }
-    [self updateUI:text];
 }
 
 

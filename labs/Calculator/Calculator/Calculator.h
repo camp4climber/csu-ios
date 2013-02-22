@@ -11,14 +11,17 @@
 @interface Calculator : NSObject
 
 @property (nonatomic) NSNumber *currentNumber;
+@property (nonatomic) NSNumber *number2;
 @property (nonatomic) NSNumber *result;
 @property (nonatomic) NSNumber *memoryValue;
-@property (nonatomic) NSMutableArray *equation;
+@property (nonatomic) NSString *operation;
 - (NSNumber *) multiply:(NSNumber*)first with:(NSNumber*)second;
 - (NSNumber *) add:(NSNumber*)first with:(NSNumber*)second;
 - (NSNumber *) subtract:(NSNumber*)first from:(NSNumber*)second;
 - (NSNumber *) divide:(NSNumber*)first by:(NSNumber*)second;
 - (NSNumber *) raise:(NSNumber*)first toPower:(NSNumber*)second;
-- (NSNumber *) parseEquation;
+- (NSNumber *) trigFunction:(NSString*) function withNumber: (NSNumber*)number;
+- (NSNumber *) unaryFunction:(NSString *)function withNumber:(NSNumber *)number;
+- (NSNumber *) performOperation;
 
 @end

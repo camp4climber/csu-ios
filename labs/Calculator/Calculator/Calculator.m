@@ -35,9 +35,98 @@
     return @(pow([first doubleValue], [second doubleValue]));
 }
 
--(NSNumber *) parseEquation
+- (NSNumber *) performOperation
 {
-    return 0;
+    if (self.operation == @"+")
+    {
+        self.currentNumber = [self add:self.currentNumber with:self.number2];
+    }
+    else if (self.operation == @"-")
+    {
+        self.currentNumber = [self subtract:self.currentNumber from:self.number2];
+    }
+    else if (self.operation == @"*")
+    {
+        self.currentNumber = [self multiply:self.currentNumber with:self.number2];
+    }
+    else if (self.operation == @"/")
+    {
+        self.currentNumber = [self divide:self.currentNumber by:self.number2];
+    }
+    else if (self.operation == @"^")
+    {
+        self.currentNumber = [self raise:self.currentNumber toPower:self.number2];
+    }
+    return self.currentNumber;
+}
+
+- (NSNumber *) trigFunction:(NSString *)function withNumber:(NSNumber *)number
+{
+    if ([function isEqual:@"sin"])
+    {
+        return @(sin([number doubleValue]));
+    }
+    else if ([function isEqual:@"cos"])
+    {
+        return @(cos([number doubleValue]));
+    }
+    else if ([function isEqual:@"tan"])
+    {
+        return @(tan([number doubleValue]));
+    }
+    else if ([function isEqual:@"sec"])
+    {
+        return @(1/sin([number doubleValue]));
+    }
+    else if ([function isEqual:@"csc"])
+    {
+        return @(1/cos([number doubleValue]));
+    }
+    else if ([function isEqual:@"cot"])
+    {
+        return @(1/tan([number doubleValue]));
+    }
+    else
+    {
+        return @0;
+    }
+}
+
+- (NSNumber *) unaryFunction:(NSString *)function withNumber:(NSNumber *)number
+{
+    if ([function isEqual:@"pi"])
+    {
+        return [self multiply:number with:@M_PI];
+    }
+    else if ([function isEqual:@"e"])
+    {
+        return [self multiply:number with:@M_E];
+    }
+    else if ([function isEqual:@"sqrt"])
+    {
+        return @(sqrt([number doubleValue]));
+    }
+    else if ([function isEqual:@"plusminus"])
+    {
+        if ([number doubleValue] == 0.0)
+            return @0;
+        return @(-[number doubleValue]);
+    }
+    else if ([function isEqual:@"log"])
+    {
+        return @(log10([number doubleValue]));
+    }
+    else if ([function isEqual:@"ln"])
+    {
+        return @(log([number doubleValue]));
+    }
+    else if ([function isEqual:@"reciprocal"])
+    {
+        return @(1/[number doubleValue]);
+    }
+
+    
+    return @0;
 }
 
 @end
