@@ -184,6 +184,13 @@
             break;
         //clear
         case 12:
+            
+            [powButton setSelected:NO];
+            [plusButton setSelected:NO];
+            [minButton setSelected:NO];
+            [multButton setSelected:NO];
+            [divButton setSelected:NO];
+            
             self.calc.currentNumber = @0;
             self.calc.number2 = @0;
             self.calc.result = @0;
@@ -254,18 +261,13 @@
         //add
         case 22:
             
-            if (![sender isSelected])
-            {
+            
                 [sender setSelected:YES];
                 [powButton setSelected:NO];
                 [minButton setSelected:NO];
                 [multButton setSelected:NO];
                 [divButton setSelected:NO];
-            }
-            else
-            {
-                [sender setSelected:NO];
-            }
+            
             
             self.calc.operation = @"+";
             self.calc.number2 = [self.calc performOperation];
@@ -275,18 +277,13 @@
         //subtract
         case 23:
             
-            if (![sender isSelected])
-            {
+            
                 [sender setSelected:YES];
                 [plusButton setSelected:NO];
                 [powButton setSelected:NO];
                 [multButton setSelected:NO];
                 [divButton setSelected:NO];
-            }
-            else
-            {
-                [sender setSelected:NO];
-            }
+            
             
             self.calc.operation = @"-";
             self.calc.number2 = [self.calc performOperation];
@@ -296,36 +293,26 @@
         //multiply
         case 24:
             
-            if (![sender isSelected])
-            {
+            
                 [sender setSelected:YES];
                 [plusButton setSelected:NO];
                 [minButton setSelected:NO];
                 [powButton setSelected:NO];
                 [divButton setSelected:NO];
-            }
-            else
-            {
-                [sender setSelected:NO];
-            }
             
+           
             self.calc.operation = @"*";
             break;
         //divide
         case 25:
             
-            if (![sender isSelected])
-            {
+            
                 [sender setSelected:YES];
                 [plusButton setSelected:NO];
                 [minButton setSelected:NO];
                 [multButton setSelected:NO];
                 [powButton setSelected:NO];
-            }
-            else
-            {
-                [sender setSelected:NO];
-            }
+            
             
             self.calc.operation = @"/";
             break;
@@ -340,18 +327,13 @@
         //exponent
         case 27:
             
-            if (![sender isSelected])
-            {
+            
                 [sender setSelected:YES];
                 [plusButton setSelected:NO];
                 [minButton setSelected:NO];
                 [multButton setSelected:NO];
                 [divButton setSelected:NO];
-            }
-            else
-            {
-                [sender setSelected:NO];
-            }
+            
             
             self.calc.operation = @"^";
             break;

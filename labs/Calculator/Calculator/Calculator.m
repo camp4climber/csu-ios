@@ -37,23 +37,30 @@
 
 - (NSNumber *) performOperation
 {
-    if (self.operation == @"+")
+    if ([self.operation isEqual:@"+"])
     {
         self.currentNumber = [self add:self.currentNumber with:self.number2];
     }
-    else if (self.operation == @"-")
+    else if ([self.operation isEqual:@"-"])
     {
-        self.currentNumber = [self subtract:self.currentNumber from:self.number2];
+        if ([self.number2 isEqual:@0])
+        {
+            self.currentNumber = [self subtract:self.number2 from:self.currentNumber];
+        }
+        else
+        {
+            self.currentNumber = [self subtract:self.currentNumber from:self.number2];
+        }
     }
-    else if (self.operation == @"*")
+    else if ([self.operation isEqual:@"*"])
     {
         self.currentNumber = [self multiply:self.currentNumber with:self.number2];
     }
-    else if (self.operation == @"/")
+    else if ([self.operation isEqual:@"/" ])
     {
         self.currentNumber = [self divide:self.currentNumber by:self.number2];
     }
-    else if (self.operation == @"^")
+    else if ([self.operation isEqual:@"^"])
     {
         self.currentNumber = [self raise:self.currentNumber toPower:self.number2];
     }
