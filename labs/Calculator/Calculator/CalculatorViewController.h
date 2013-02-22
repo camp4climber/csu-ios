@@ -12,7 +12,6 @@
 
 - (IBAction)numberPressed:(UIButton *)sender;
 - (IBAction)operationPressed:(UIButton *)sender;
-- (IBAction)decimalPressed:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UILabel *display;
 
 - (void) updateUI:(NSString *)text;
