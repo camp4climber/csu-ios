@@ -410,6 +410,8 @@
 
 - (IBAction)swipeRightAdd:(UISwipeGestureRecognizer *)sender
 {
+    self.calc.currentNumber = @([self.display.text doubleValue]);
+    
     [self.powButton setSelected:NO];
     [self.plusButton setSelected:YES];
     [self.minButton setSelected:NO];
@@ -424,6 +426,8 @@
 
 - (IBAction)swipeUpMinus:(UISwipeGestureRecognizer *)sender
 {
+    self.calc.currentNumber = @([self.display.text doubleValue]);
+    
     [self.powButton setSelected:NO];
     [self.plusButton setSelected:NO];
     [self.minButton setSelected:YES];
@@ -438,6 +442,8 @@
 
 - (IBAction)swipeLeftMultiply:(UISwipeGestureRecognizer *)sender
 {
+    self.calc.currentNumber = @([self.display.text doubleValue]);
+    
     [self.powButton setSelected:NO];
     [self.plusButton setSelected:NO];
     [self.minButton setSelected:NO];
@@ -452,6 +458,8 @@
 
 - (IBAction)swipeDownDivide:(UIGestureRecognizer *) sender
 {
+    self.calc.currentNumber = @([self.display.text doubleValue]);
+    
     [self.powButton setSelected:NO];
     [self.plusButton setSelected:NO];
     [self.minButton setSelected:NO];
@@ -465,6 +473,8 @@
 }
 
 - (IBAction)doubleTapEqual:(UITapGestureRecognizer *)sender {
+    self.calc.currentNumber = @([self.display.text doubleValue]);
+    
     [self.powButton setSelected:NO];
     [self.plusButton setSelected:NO];
     [self.minButton setSelected:NO];
