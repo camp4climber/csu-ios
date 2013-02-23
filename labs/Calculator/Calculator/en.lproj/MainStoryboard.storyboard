@@ -15,9 +15,17 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nsq-Nf-36z">
                                 <rect key="frame" x="5" y="7" width="310" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="jlX-ht-BQb" appends="YES" id="TIo-K3-71G"/>
+                                    <outletCollection property="gestureRecognizers" destination="DDM-xk-BdZ" appends="YES" id="vza-tk-CFf"/>
+                                    <outletCollection property="gestureRecognizers" destination="Mv7-aD-Opt" appends="YES" id="k0O-tK-yD3"/>
+                                    <outletCollection property="gestureRecognizers" destination="tMH-Nu-aNR" appends="YES" id="ECb-qP-Usl"/>
+                                    <outletCollection property="gestureRecognizers" destination="JtN-EK-kho" appends="YES" id="F7u-fX-cDR"/>
+                                </connections>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="c9K-KK-NhV">
                                 <rect key="frame" x="5" y="412" width="60" height="44"/>
@@ -542,6 +550,31 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="jlX-ht-BQb">
+                    <connections>
+                        <action selector="swipeRightAdd:" destination="2" id="74D-j4-o2y"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="DDM-xk-BdZ">
+                    <connections>
+                        <action selector="swipeUpMinus:" destination="2" id="4kE-dt-bkP"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="Mv7-aD-Opt">
+                    <connections>
+                        <action selector="swipeLeftMultiply:" destination="2" id="wHX-W3-Gsv"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="tMH-Nu-aNR">
+                    <connections>
+                        <action selector="swipeDownDivide:" destination="2" id="eLX-kE-5PU"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="JtN-EK-kho">
+                    <connections>
+                        <action selector="doubleTapEqual:" destination="2" id="RqF-Jw-hHe"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-70" y="70"/>
         </scene>

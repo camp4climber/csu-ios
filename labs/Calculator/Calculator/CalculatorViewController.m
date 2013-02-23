@@ -18,6 +18,22 @@
 
 @implementation CalculatorViewController
 
+-(id) plusButton {
+    return[self.view viewWithTag:22];
+}
+-(id) minButton{
+    return [self.view viewWithTag:23];
+}
+-(id) multButton{
+    return [self.view viewWithTag:24];
+}
+-(id) divButton{
+    return [self.view viewWithTag:25];
+}
+- (id) powButton{
+    return [self.view viewWithTag:27];
+}
+
 - (Calculator *)calc
 {
     if (!_calc) _calc = [[Calculator alloc] init];
@@ -157,13 +173,6 @@
 - (IBAction)operationPressed:(UIButton *)sender
 {
     self.calc.currentNumber = @([self.display.text doubleValue]);
-    id plusButton = [self.view viewWithTag:22];
-    id minButton = [self.view viewWithTag:23];
-    id multButton = [self.view viewWithTag:24];
-    id divButton = [self.view viewWithTag:25];
-    id powButton = [self.view viewWithTag:27];
-
-    
 
     switch (sender.tag) {
         //multiply current number by pi
@@ -185,11 +194,11 @@
         //clear
         case 12:
             
-            [powButton setSelected:NO];
-            [plusButton setSelected:NO];
-            [minButton setSelected:NO];
-            [multButton setSelected:NO];
-            [divButton setSelected:NO];
+            [self.powButton setSelected:NO];
+            [self.plusButton setSelected:NO];
+            [self.minButton setSelected:NO];
+            [self.multButton setSelected:NO];
+            [self.divButton setSelected:NO];
             
             self.calc.currentNumber = @0;
             self.calc.number2 = @0;
@@ -262,10 +271,10 @@
         case 22:
             
             [sender setSelected:YES];
-            [powButton setSelected:NO];
-            [minButton setSelected:NO];
-            [multButton setSelected:NO];
-            [divButton setSelected:NO];
+            [self.powButton setSelected:NO];
+            [self.minButton setSelected:NO];
+            [self.multButton setSelected:NO];
+            [self.divButton setSelected:NO];
             
             
             self.calc.operation = @"+";
@@ -277,10 +286,10 @@
         case 23:
             
             [sender setSelected:YES];
-            [plusButton setSelected:NO];
-            [powButton setSelected:NO];
-            [multButton setSelected:NO];
-            [divButton setSelected:NO];
+            [self.plusButton setSelected:NO];
+            [self.powButton setSelected:NO];
+            [self.multButton setSelected:NO];
+            [self.divButton setSelected:NO];
             
             
             self.calc.operation = @"-";
@@ -292,10 +301,10 @@
         case 24:
             
             [sender setSelected:YES];
-            [plusButton setSelected:NO];
-            [minButton setSelected:NO];
-            [powButton setSelected:NO];
-            [divButton setSelected:NO];
+            [self.plusButton setSelected:NO];
+            [self.minButton setSelected:NO];
+            [self.powButton setSelected:NO];
+            [self.divButton setSelected:NO];
             
            
             self.calc.operation = @"*";
@@ -307,10 +316,10 @@
         case 25:
             
             [sender setSelected:YES];
-            [plusButton setSelected:NO];
-            [minButton setSelected:NO];
-            [multButton setSelected:NO];
-            [powButton setSelected:NO];
+            [self.plusButton setSelected:NO];
+            [self.minButton setSelected:NO];
+            [self.multButton setSelected:NO];
+            [self.powButton setSelected:NO];
             
             self.calc.operation = @"/";
             self.calc.number2 = [self.calc performOperation];
@@ -329,10 +338,10 @@
         case 27:
             
             [sender setSelected:YES];
-            [plusButton setSelected:NO];
-            [minButton setSelected:NO];
-            [multButton setSelected:NO];
-            [divButton setSelected:NO];
+            [self.plusButton setSelected:NO];
+            [self.minButton setSelected:NO];
+            [self.multButton setSelected:NO];
+            [self.divButton setSelected:NO];
             
             
             self.calc.operation = @"^";
@@ -343,11 +352,11 @@
         //equals
         case 28:
     
-            [powButton setSelected:NO];
-            [plusButton setSelected:NO];
-            [minButton setSelected:NO];
-            [multButton setSelected:NO];
-            [divButton setSelected:NO];
+            [self.powButton setSelected:NO];
+            [self.plusButton setSelected:NO];
+            [self.minButton setSelected:NO];
+            [self.multButton setSelected:NO];
+            [self.divButton setSelected:NO];
                 
             self.calc.result = [self.calc performOperation];
             self.text = [self.calc.result description];
@@ -398,6 +407,75 @@
     }
 }
 
+
+- (IBAction)swipeRightAdd:(UISwipeGestureRecognizer *)sender
+{
+    [self.powButton setSelected:NO];
+    [self.plusButton setSelected:YES];
+    [self.minButton setSelected:NO];
+    [self.multButton setSelected:NO];
+    [self.divButton setSelected:NO];
+    
+    self.calc.operation = @"+";
+    self.calc.number2 = [self.calc performOperation];
+    self.calc.currentNumber = @0;
+    self.text = @"";
+}
+
+- (IBAction)swipeUpMinus:(UISwipeGestureRecognizer *)sender
+{
+    [self.powButton setSelected:NO];
+    [self.plusButton setSelected:NO];
+    [self.minButton setSelected:YES];
+    [self.multButton setSelected:NO];
+    [self.divButton setSelected:NO];
+    
+    self.calc.operation = @"-";
+    self.calc.number2 = [self.calc performOperation];
+    self.calc.currentNumber = @0;
+    self.text = @"";
+}
+
+- (IBAction)swipeLeftMultiply:(UISwipeGestureRecognizer *)sender
+{
+    [self.powButton setSelected:NO];
+    [self.plusButton setSelected:NO];
+    [self.minButton setSelected:NO];
+    [self.multButton setSelected:YES];
+    [self.divButton setSelected:NO];
+    
+    self.calc.operation = @"*";
+    self.calc.number2 = [self.calc performOperation];
+    self.calc.currentNumber = @0;
+    self.text = @"";
+}
+
+- (IBAction)swipeDownDivide:(UIGestureRecognizer *) sender
+{
+    [self.powButton setSelected:NO];
+    [self.plusButton setSelected:NO];
+    [self.minButton setSelected:NO];
+    [self.multButton setSelected:NO];
+    [self.divButton setSelected:YES];
+    
+    self.calc.operation = @"/";
+    self.calc.number2 = [self.calc performOperation];
+    self.calc.currentNumber = @0;
+    self.text = @"";
+}
+
+- (IBAction)doubleTapEqual:(UITapGestureRecognizer *)sender {
+    [self.powButton setSelected:NO];
+    [self.plusButton setSelected:NO];
+    [self.minButton setSelected:NO];
+    [self.multButton setSelected:NO];
+    [self.divButton setSelected:NO];
+    
+    self.calc.result = [self.calc performOperation];
+    self.text = [self.calc.result description];
+    self.calc.currentNumber = @0;
+    [self updateUI:self.text];
+}
 
 - (void) updateUI:(NSString *)text
 {

@@ -13,6 +13,11 @@
 - (IBAction)numberPressed:(UIButton *)sender;
 - (IBAction)operationPressed:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UILabel *display;
+- (IBAction)swipeRightAdd:(UISwipeGestureRecognizer *)sender;
+- (IBAction)swipeUpMinus:(UISwipeGestureRecognizer *)sender;
+- (IBAction)swipeLeftMultiply:(UISwipeGestureRecognizer *)sender;
+- (IBAction)swipeDownDivide:(UIGestureRecognizer *) sender;
+- (IBAction)doubleTapEqual:(UITapGestureRecognizer *)sender;
 
 - (void) updateUI:(NSString *)text;
 
