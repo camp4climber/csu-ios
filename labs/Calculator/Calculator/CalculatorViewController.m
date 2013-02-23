@@ -261,12 +261,11 @@
         //add
         case 22:
             
-            
-                [sender setSelected:YES];
-                [powButton setSelected:NO];
-                [minButton setSelected:NO];
-                [multButton setSelected:NO];
-                [divButton setSelected:NO];
+            [sender setSelected:YES];
+            [powButton setSelected:NO];
+            [minButton setSelected:NO];
+            [multButton setSelected:NO];
+            [divButton setSelected:NO];
             
             
             self.calc.operation = @"+";
@@ -277,12 +276,11 @@
         //subtract
         case 23:
             
-            
-                [sender setSelected:YES];
-                [plusButton setSelected:NO];
-                [powButton setSelected:NO];
-                [multButton setSelected:NO];
-                [divButton setSelected:NO];
+            [sender setSelected:YES];
+            [plusButton setSelected:NO];
+            [powButton setSelected:NO];
+            [multButton setSelected:NO];
+            [divButton setSelected:NO];
             
             
             self.calc.operation = @"-";
@@ -293,28 +291,31 @@
         //multiply
         case 24:
             
-            
-                [sender setSelected:YES];
-                [plusButton setSelected:NO];
-                [minButton setSelected:NO];
-                [powButton setSelected:NO];
-                [divButton setSelected:NO];
+            [sender setSelected:YES];
+            [plusButton setSelected:NO];
+            [minButton setSelected:NO];
+            [powButton setSelected:NO];
+            [divButton setSelected:NO];
             
            
             self.calc.operation = @"*";
+            self.calc.number2 = [self.calc performOperation];
+            self.calc.currentNumber = @0;
+            self.text = @"";
             break;
         //divide
         case 25:
             
-            
-                [sender setSelected:YES];
-                [plusButton setSelected:NO];
-                [minButton setSelected:NO];
-                [multButton setSelected:NO];
-                [powButton setSelected:NO];
-            
+            [sender setSelected:YES];
+            [plusButton setSelected:NO];
+            [minButton setSelected:NO];
+            [multButton setSelected:NO];
+            [powButton setSelected:NO];
             
             self.calc.operation = @"/";
+            self.calc.number2 = [self.calc performOperation];
+            self.calc.currentNumber = @0;
+            self.text = @"";
             break;
         //square root
         case 26:
@@ -327,15 +328,17 @@
         //exponent
         case 27:
             
-            
-                [sender setSelected:YES];
-                [plusButton setSelected:NO];
-                [minButton setSelected:NO];
-                [multButton setSelected:NO];
-                [divButton setSelected:NO];
+            [sender setSelected:YES];
+            [plusButton setSelected:NO];
+            [minButton setSelected:NO];
+            [multButton setSelected:NO];
+            [divButton setSelected:NO];
             
             
             self.calc.operation = @"^";
+            self.calc.number2 = [self.calc performOperation];
+            self.calc.currentNumber = @0;
+            self.text = @"";
             break;
         //equals
         case 28:

@@ -54,15 +54,18 @@
     }
     else if ([self.operation isEqual:@"*"])
     {
-        self.currentNumber = [self multiply:self.currentNumber with:self.number2];
+        if (![self.number2 isEqual:@0])
+            self.currentNumber = [self multiply:self.currentNumber with:self.number2];
     }
     else if ([self.operation isEqual:@"/" ])
     {
-        self.currentNumber = [self divide:self.currentNumber by:self.number2];
+        if (![self.number2 isEqual:@0])
+            self.currentNumber = [self divide:self.number2 by:self.currentNumber];
     }
     else if ([self.operation isEqual:@"^"])
     {
-        self.currentNumber = [self raise:self.currentNumber toPower:self.number2];
+        if (![self.number2 isEqual:@0])
+            self.currentNumber = [self raise:self.number2 toPower:self.currentNumber];
     }
     return self.currentNumber;
 }
