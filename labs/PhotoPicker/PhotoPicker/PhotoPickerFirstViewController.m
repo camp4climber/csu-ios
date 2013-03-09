@@ -129,7 +129,7 @@
     NSUInteger numberOfRows = [self.photoLibrary numberOfPhotosInCategory];
     UIImage *img;
     
-    if (currentRow < numberOfRows)
+    if (currentRow < numberOfRows-1)
         next = currentRow + 1;
     [self.photoPicker selectRow:next inComponent:1 animated:NO];
     img = [self.photoLibrary imageForPhotoAtPosition:next];
@@ -160,7 +160,7 @@
     NSUInteger numberOfRows = [self.photoLibrary numberOfCategories];
     UIImage *img;
     
-    if (currentRow < numberOfRows)
+    if (currentRow < numberOfRows-1)
     {
         next = currentRow + 1;
         self.photoLibrary.currentCategory = [[self.photoLibrary.photos allKeys] objectAtIndex:next];

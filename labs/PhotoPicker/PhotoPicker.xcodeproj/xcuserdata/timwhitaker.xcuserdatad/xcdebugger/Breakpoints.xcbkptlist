@@ -136,7 +136,20 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "PhotoPicker/PhotoLibrary.m"
-         timestampString = "384494148.095721"
+         timestampString = "384494318.716295"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "63"
+         endingLineNumber = "63"
+         landmarkName = "-nameForPhotoAtPosition:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "PhotoPicker/PhotoLibrary.m"
+         timestampString = "384494318.716295"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "64"
@@ -149,24 +162,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "PhotoPicker/PhotoLibrary.m"
-         timestampString = "384494148.095721"
+         timestampString = "384494318.716295"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "65"
-         endingLineNumber = "65"
-         landmarkName = "-nameForPhotoAtPosition:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "PhotoPicker/PhotoLibrary.m"
-         timestampString = "384494148.095721"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "74"
-         endingLineNumber = "74"
+         startingLineNumber = "73"
+         endingLineNumber = "73"
          landmarkName = "-imageForPhotoAtPosition:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -249,7 +249,7 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "No"
+         shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "PhotoPicker/PhotoPickerFirstViewController.m"
@@ -353,7 +353,7 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "PhotoPicker/PhotoLibrary.m"
@@ -363,6 +363,19 @@
          startingLineNumber = "40"
          endingLineNumber = "40"
          landmarkName = "-numberOfCategories"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "PhotoPicker/PhotoPickerFirstViewController.m"
+         timestampString = "384494350.628009"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "158"
+         endingLineNumber = "158"
+         landmarkName = "-swipeDown:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
