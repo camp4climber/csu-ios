@@ -136,11 +136,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "PhotoPicker/PhotoLibrary.m"
-         timestampString = "384494318.716295"
+         timestampString = "384494664.518332"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "63"
-         endingLineNumber = "63"
+         startingLineNumber = "59"
+         endingLineNumber = "59"
          landmarkName = "-nameForPhotoAtPosition:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -149,11 +149,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "PhotoPicker/PhotoLibrary.m"
-         timestampString = "384494318.716295"
+         timestampString = "384494664.518332"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "64"
-         endingLineNumber = "64"
+         startingLineNumber = "60"
+         endingLineNumber = "60"
          landmarkName = "-nameForPhotoAtPosition:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -162,11 +162,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "PhotoPicker/PhotoLibrary.m"
-         timestampString = "384494318.716295"
+         timestampString = "384494664.518332"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "73"
-         endingLineNumber = "73"
+         startingLineNumber = "69"
+         endingLineNumber = "69"
          landmarkName = "-imageForPhotoAtPosition:"
          landmarkType = "5">
       </FileBreakpoint>
