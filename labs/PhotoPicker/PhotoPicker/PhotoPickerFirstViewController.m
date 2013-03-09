@@ -31,7 +31,7 @@
 
 - (NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    NSInteger num;
+    NSInteger num = 0;
     
     switch (component)
     {
@@ -126,7 +126,7 @@
 {
     NSUInteger currentRow = [self.photoPicker selectedRowInComponent:1];
     NSUInteger next = 0;
-    NSUInteger numberOfRows = [self.photoPicker numberOfRowsInComponent:1];
+    NSUInteger numberOfRows = [self.photoLibrary numberOfPhotosInCategory];
     UIImage *img;
     
     if (currentRow < numberOfRows)
@@ -157,7 +157,7 @@
 {
     NSUInteger currentRow = [self.photoPicker selectedRowInComponent:0];
     NSUInteger next = 0;
-    NSUInteger numberOfRows = [self.photoPicker numberOfRowsInComponent:0];
+    NSUInteger numberOfRows = [self.photoLibrary numberOfCategories];
     UIImage *img;
     
     if (currentRow < numberOfRows)

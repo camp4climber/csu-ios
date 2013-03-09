@@ -39,7 +39,11 @@
 
 - (NSUInteger) numberOfCategories
 {
-    return self.photos.count;
+    //returns 28,000???????
+    //As does self.photos count
+    //As well as [[self.photos allValues] count]
+    //return [[self.photos allKeys] count];
+    return 3;
 }
 
 - (NSString *) nameForCategory:(NSUInteger)category
