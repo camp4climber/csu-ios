@@ -28,7 +28,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.gridImage.image = self.img;
-    self.imageLabel.text = self.labelText;
+    self.title = self.labelText;
 }
 
 - (void)didReceiveMemoryWarning

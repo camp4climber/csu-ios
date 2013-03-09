@@ -112,19 +112,6 @@
 - (IBAction)swipeLeft:(UISwipeGestureRecognizer *)sender
 {
     NSUInteger currentRow = [self.photoPicker selectedRowInComponent:1];
-    NSUInteger previous = 0;
-    UIImage *img;
-    
-    if (currentRow!=0)
-        previous = currentRow - 1;
-    [self.photoPicker selectRow:previous inComponent:1 animated:NO];
-    img = [self.photoLibrary imageForPhotoAtPosition:previous];
-    [self update:img];
-}
-
-- (IBAction)swipeRight:(UISwipeGestureRecognizer *)sender
-{
-    NSUInteger currentRow = [self.photoPicker selectedRowInComponent:1];
     NSUInteger next = 0;
     NSUInteger numberOfRows = [self.photoLibrary numberOfPhotosInCategory];
     UIImage *img;
@@ -134,6 +121,20 @@
     [self.photoPicker selectRow:next inComponent:1 animated:NO];
     img = [self.photoLibrary imageForPhotoAtPosition:next];
     [self update:img];
+}
+
+- (IBAction)swipeRight:(UISwipeGestureRecognizer *)sender
+{
+    NSUInteger currentRow = [self.photoPicker selectedRowInComponent:1];
+    NSUInteger previous = 0;
+    UIImage *img;
+    
+    if (currentRow!=0)
+        previous = currentRow - 1;
+    [self.photoPicker selectRow:previous inComponent:1 animated:NO];
+    img = [self.photoLibrary imageForPhotoAtPosition:previous];
+    [self update:img];
+
 }
 
 - (IBAction)swipeUp:(UISwipeGestureRecognizer *)sender
