@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Earth</key>
+	<dict>
+		<key>New item - 5</key>
+		<string>earth5.jpg</string>
+		<key>New item - 4</key>
+		<string>earth4.jpg</string>
+		<key>New item - 3</key>
+		<string>earth3.jpg</string>
+		<key>New item - 2</key>
+		<string>earth2.jpg</string>
+		<key>New item</key>
+		<string>earth1.jpg</string>
+	</dict>
+	<key>Space</key>
+	<dict>
+		<key>New item</key>
+		<string>space6.jpg</string>
+		<key>New item - 2</key>
+		<string>space7.jpg</string>
+		<key>New item - 3</key>
+		<string>space5.jpg</string>
+		<key>New item - 4</key>
+		<string>space4.jpg</string>
+		<key>New item - 5</key>
+		<string>space3.jpg</string>
+		<key>New item - 6</key>
+		<string>space2.jpg</string>
+		<key>New item - 7</key>
+		<string>space1.jpg</string>
+	</dict>
+	<key>Climbing</key>
+	<dict>
+		<key>New item</key>
+		<string>climbing4.jpg</string>
+		<key>New item - 2</key>
+		<string>climbing3.jpg</string>
+		<key>New item - 3</key>
+		<string>climbing2.jpg</string>
+		<key>New item - 4</key>
+		<string>climbing1.jpg</string>
+	</dict>
+</dict>
+</plist>
