@@ -56,7 +56,7 @@
 
 - (NSString *) nameForPhotoAtPosition:(NSUInteger)position
 {
-    NSArray *photos = [[self.photos objectForKey:self.currentCategory] allValues];
+    NSArray *photos = [[self.photos objectForKey:self.currentCategory] allKeys];
     NSString *name = [photos objectAtIndex:position];
     return name;
 }

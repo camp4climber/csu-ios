@@ -4,43 +4,43 @@
 <dict>
 	<key>Earth</key>
 	<dict>
-		<key>New item - 5</key>
+		<key>Rainbow</key>
 		<string>earth5.jpg</string>
-		<key>New item - 4</key>
+		<key>Green Hills</key>
 		<string>earth4.jpg</string>
-		<key>New item - 3</key>
+		<key>Roaring River</key>
 		<string>earth3.jpg</string>
-		<key>New item - 2</key>
+		<key>Valley Clouds</key>
 		<string>earth2.jpg</string>
-		<key>New item</key>
+		<key>Sand Dune</key>
 		<string>earth1.jpg</string>
 	</dict>
 	<key>Space</key>
 	<dict>
-		<key>New item</key>
+		<key>Tree in the Night</key>
 		<string>space6.jpg</string>
-		<key>New item - 2</key>
+		<key>Big Blue</key>
 		<string>space7.jpg</string>
-		<key>New item - 3</key>
+		<key>Shuttle Launch</key>
 		<string>space5.jpg</string>
-		<key>New item - 4</key>
+		<key>Majestic Mountain</key>
 		<string>space4.jpg</string>
-		<key>New item - 5</key>
+		<key>Big Galaxies</key>
 		<string>space3.jpg</string>
-		<key>New item - 6</key>
+		<key>Cliff Space</key>
 		<string>space2.jpg</string>
-		<key>New item - 7</key>
+		<key>Galaxy Stars</key>
 		<string>space1.jpg</string>
 	</dict>
 	<key>Climbing</key>
 	<dict>
-		<key>New item</key>
+		<key>Reaching</key>
 		<string>climbing4.jpg</string>
-		<key>New item - 2</key>
+		<key>Fred Nicole</key>
 		<string>climbing3.jpg</string>
-		<key>New item - 3</key>
+		<key>Big Roof</key>
 		<string>climbing2.jpg</string>
-		<key>New item - 4</key>
+		<key>Crack Layback</key>
 		<string>climbing1.jpg</string>
 	</dict>
 </dict>

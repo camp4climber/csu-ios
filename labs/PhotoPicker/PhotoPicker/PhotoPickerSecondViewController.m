@@ -81,8 +81,6 @@
             photoCell.cellImage.image = [self.photoLibrary imageForPhotoAtPosition:indexPath.item];
             break;
     }
-    CGRect cellSize = CGRectMake(0, 0, 100, 100);
-    [photoCell setFrame:cellSize];
     return photoCell;
 }
 
