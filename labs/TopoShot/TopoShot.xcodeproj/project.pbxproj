@@ -1,0 +1,349 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		43332E8616EDD94300CF1B15 /* TopoShotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43332E8516EDD94300CF1B15 /* TopoShotViewController.m */; };
+		43332E8916EDDB2C00CF1B15 /* RouteLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 43332E8816EDDB2C00CF1B15 /* RouteLibrary.m */; };
+		438B77CD16EC5CD100022B35 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438B77CC16EC5CD100022B35 /* UIKit.framework */; };
+		438B77CF16EC5CD100022B35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438B77CE16EC5CD100022B35 /* Foundation.framework */; };
+		438B77D116EC5CD100022B35 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438B77D016EC5CD100022B35 /* CoreGraphics.framework */; };
+		438B77D716EC5CD100022B35 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 438B77D516EC5CD100022B35 /* InfoPlist.strings */; };
+		438B77D916EC5CD100022B35 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 438B77D816EC5CD100022B35 /* main.m */; };
+		438B77DD16EC5CD100022B35 /* TopoShotAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 438B77DC16EC5CD100022B35 /* TopoShotAppDelegate.m */; };
+		438B77DF16EC5CD100022B35 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 438B77DE16EC5CD100022B35 /* Default.png */; };
+		438B77E116EC5CD100022B35 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 438B77E016EC5CD100022B35 /* Default@2x.png */; };
+		438B77E316EC5CD100022B35 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 438B77E216EC5CD100022B35 /* Default-568h@2x.png */; };
+		438B77E616EC5CD100022B35 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 438B77E416EC5CD100022B35 /* MainStoryboard.storyboard */; };
+		438B77F116EC65A500022B35 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438B77F016EC65A500022B35 /* HomePageViewController.m */; };
+		438B77FD16EC6F1C00022B35 /* ImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438B77FC16EC6F1C00022B35 /* ImagePickerViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		43332E8416EDD94200CF1B15 /* TopoShotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopoShotViewController.h; sourceTree = "<group>"; };
+		43332E8516EDD94300CF1B15 /* TopoShotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopoShotViewController.m; sourceTree = "<group>"; };
+		43332E8716EDDB2C00CF1B15 /* RouteLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteLibrary.h; sourceTree = "<group>"; };
+		43332E8816EDDB2C00CF1B15 /* RouteLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteLibrary.m; sourceTree = "<group>"; };
+		438B77C916EC5CD100022B35 /* TopoShot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopoShot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		438B77CC16EC5CD100022B35 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		438B77CE16EC5CD100022B35 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		438B77D016EC5CD100022B35 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		438B77D416EC5CD100022B35 /* TopoShot-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TopoShot-Info.plist"; sourceTree = "<group>"; };
+		438B77D616EC5CD100022B35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		438B77D816EC5CD100022B35 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		438B77DA16EC5CD100022B35 /* TopoShot-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TopoShot-Prefix.pch"; sourceTree = "<group>"; };
+		438B77DB16EC5CD100022B35 /* TopoShotAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopoShotAppDelegate.h; sourceTree = "<group>"; };
+		438B77DC16EC5CD100022B35 /* TopoShotAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopoShotAppDelegate.m; sourceTree = "<group>"; };
+		438B77DE16EC5CD100022B35 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		438B77E016EC5CD100022B35 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		438B77E216EC5CD100022B35 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		438B77E516EC5CD100022B35 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		438B77EF16EC65A500022B35 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
+		438B77F016EC65A500022B35 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
+		438B77FB16EC6F1C00022B35 /* ImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImagePickerViewController.h; path = ../ImagePickerViewController.h; sourceTree = "<group>"; };
+		438B77FC16EC6F1C00022B35 /* ImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImagePickerViewController.m; path = ../ImagePickerViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		438B77C616EC5CD100022B35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				438B77CD16EC5CD100022B35 /* UIKit.framework in Frameworks */,
+				438B77CF16EC5CD100022B35 /* Foundation.framework in Frameworks */,
+				438B77D116EC5CD100022B35 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4375ADCC16FF792E002DEE62 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				43332E8716EDDB2C00CF1B15 /* RouteLibrary.h */,
+				43332E8816EDDB2C00CF1B15 /* RouteLibrary.m */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		4375ADCD16FF7936002DEE62 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		4375ADCE16FF793E002DEE62 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				438B77FB16EC6F1C00022B35 /* ImagePickerViewController.h */,
+				438B77FC16EC6F1C00022B35 /* ImagePickerViewController.m */,
+				438B77EF16EC65A500022B35 /* HomePageViewController.h */,
+				438B77F016EC65A500022B35 /* HomePageViewController.m */,
+				43332E8416EDD94200CF1B15 /* TopoShotViewController.h */,
+				43332E8516EDD94300CF1B15 /* TopoShotViewController.m */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		438B77C016EC5CD000022B35 = {
+			isa = PBXGroup;
+			children = (
+				438B77D216EC5CD100022B35 /* TopoShot */,
+				438B77CB16EC5CD100022B35 /* Frameworks */,
+				438B77CA16EC5CD100022B35 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		438B77CA16EC5CD100022B35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				438B77C916EC5CD100022B35 /* TopoShot.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		438B77CB16EC5CD100022B35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				438B77CC16EC5CD100022B35 /* UIKit.framework */,
+				438B77CE16EC5CD100022B35 /* Foundation.framework */,
+				438B77D016EC5CD100022B35 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		438B77D216EC5CD100022B35 /* TopoShot */ = {
+			isa = PBXGroup;
+			children = (
+				4375ADCE16FF793E002DEE62 /* controllers */,
+				4375ADCD16FF7936002DEE62 /* views */,
+				4375ADCC16FF792E002DEE62 /* models */,
+				438B77DB16EC5CD100022B35 /* TopoShotAppDelegate.h */,
+				438B77DC16EC5CD100022B35 /* TopoShotAppDelegate.m */,
+				438B77E416EC5CD100022B35 /* MainStoryboard.storyboard */,
+				438B77D316EC5CD100022B35 /* Supporting Files */,
+			);
+			path = TopoShot;
+			sourceTree = "<group>";
+		};
+		438B77D316EC5CD100022B35 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				438B77D416EC5CD100022B35 /* TopoShot-Info.plist */,
+				438B77D516EC5CD100022B35 /* InfoPlist.strings */,
+				438B77D816EC5CD100022B35 /* main.m */,
+				438B77DA16EC5CD100022B35 /* TopoShot-Prefix.pch */,
+				438B77DE16EC5CD100022B35 /* Default.png */,
+				438B77E016EC5CD100022B35 /* Default@2x.png */,
+				438B77E216EC5CD100022B35 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		438B77C816EC5CD100022B35 /* TopoShot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 438B77EC16EC5CD100022B35 /* Build configuration list for PBXNativeTarget "TopoShot" */;
+			buildPhases = (
+				438B77C516EC5CD100022B35 /* Sources */,
+				438B77C616EC5CD100022B35 /* Frameworks */,
+				438B77C716EC5CD100022B35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TopoShot;
+			productName = TopoShot;
+			productReference = 438B77C916EC5CD100022B35 /* TopoShot.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		438B77C116EC5CD000022B35 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TopoShot;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "CSU Chico";
+			};
+			buildConfigurationList = 438B77C416EC5CD000022B35 /* Build configuration list for PBXProject "TopoShot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 438B77C016EC5CD000022B35;
+			productRefGroup = 438B77CA16EC5CD100022B35 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				438B77C816EC5CD100022B35 /* TopoShot */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		438B77C716EC5CD100022B35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				438B77D716EC5CD100022B35 /* InfoPlist.strings in Resources */,
+				438B77DF16EC5CD100022B35 /* Default.png in Resources */,
+				438B77E116EC5CD100022B35 /* Default@2x.png in Resources */,
+				438B77E316EC5CD100022B35 /* Default-568h@2x.png in Resources */,
+				438B77E616EC5CD100022B35 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		438B77C516EC5CD100022B35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				438B77D916EC5CD100022B35 /* main.m in Sources */,
+				438B77DD16EC5CD100022B35 /* TopoShotAppDelegate.m in Sources */,
+				438B77F116EC65A500022B35 /* HomePageViewController.m in Sources */,
+				438B77FD16EC6F1C00022B35 /* ImagePickerViewController.m in Sources */,
+				43332E8616EDD94300CF1B15 /* TopoShotViewController.m in Sources */,
+				43332E8916EDDB2C00CF1B15 /* RouteLibrary.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		438B77D516EC5CD100022B35 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				438B77D616EC5CD100022B35 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		438B77E416EC5CD100022B35 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				438B77E516EC5CD100022B35 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		438B77EA16EC5CD100022B35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		438B77EB16EC5CD100022B35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		438B77ED16EC5CD100022B35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TopoShot/TopoShot-Prefix.pch";
+				INFOPLIST_FILE = "TopoShot/TopoShot-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		438B77EE16EC5CD100022B35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TopoShot/TopoShot-Prefix.pch";
+				INFOPLIST_FILE = "TopoShot/TopoShot-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		438B77C416EC5CD000022B35 /* Build configuration list for PBXProject "TopoShot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				438B77EA16EC5CD100022B35 /* Debug */,
+				438B77EB16EC5CD100022B35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		438B77EC16EC5CD100022B35 /* Build configuration list for PBXNativeTarget "TopoShot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				438B77ED16EC5CD100022B35 /* Debug */,
+				438B77EE16EC5CD100022B35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 438B77C116EC5CD000022B35 /* Project object */;
+}
