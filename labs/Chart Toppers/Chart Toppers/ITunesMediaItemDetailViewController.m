@@ -27,6 +27,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.title = self.item.title;
     self.titleLabel.text = self.item.title;
     self.artistLabel.text = self.item.artist;
     self.priceButton.titleLabel.text = self.item.price;
@@ -56,6 +57,8 @@
 }
 
 - (IBAction)goToURL:(UIButton *)sender {
+    NSURL *url = [self.item storeURL];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 

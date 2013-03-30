@@ -22,6 +22,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh"];
+    [refresh addTarget:self action:@selector(dragToRefresh:) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refresh;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -54,6 +58,13 @@
     ITunesMediaItem *item = self.mediaThings[indexPath.item];
     
     detailController.item = item;
+}
+
+- (void) dragToRefresh:(UIRefreshControl *)refreshControl
+{
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Updating..."];
+    [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
 }
 
 @end

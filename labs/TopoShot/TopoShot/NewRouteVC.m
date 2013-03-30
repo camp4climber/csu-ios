@@ -1,19 +1,18 @@
 //
-//  ImagePickerViewController.m
+//  NewRouteVC.m
 //  TopoShot
 //
-//  Created by Tim Whitaker on 3/9/13.
+//  Created by Tim Whitaker on 3/29/13.
 //  Copyright (c) 2013 CSU Chico. All rights reserved.
 //
 
-#import "ImagePickerViewController.h"
+#import "NewRouteVC.h"
 
-@interface ImagePickerViewController ()
+@interface NewRouteVC ()
 
 @end
 
-@implementation ImagePickerViewController
-
+@implementation NewRouteVC
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,6 +34,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end

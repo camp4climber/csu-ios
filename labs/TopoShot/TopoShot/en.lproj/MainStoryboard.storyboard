@@ -1,190 +1,138 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JQW-go-EId">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Dge-wP-HyE">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Home Page View Controller - Stone Labs-->
-        <scene sceneID="2gT-bB-LKa">
+        <!--Navigation Controller - New Route-->
+        <scene sceneID="HaW-bZ-uBe">
             <objects>
-                <viewController id="kkr-JB-qDb" customClass="HomePageViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rvO-v4-KEW">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ol-0b-AH9"/>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L37-lb-aaf">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Take Photo">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="getPhoto:" destination="kkr-JB-qDb" eventType="touchUpInside" id="6am-GU-7xc"/>
-                                    <segue destination="D9N-Y7-Wyn" kind="modal" id="rj7-ay-f2B"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anf-RW-vBo">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Choose Photo From Library">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="getPhoto:" destination="kkr-JB-qDb" eventType="touchUpInside" id="zWg-cP-w01"/>
-                                    <segue destination="D9N-Y7-Wyn" kind="modal" id="fib-lu-iOT"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Cv-rs-YM6">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Use Photo">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="savePhoto:" destination="kkr-JB-qDb" eventType="touchUpInside" id="2zd-pG-Wcc"/>
-                                    <segue destination="y3c-4k-55l" kind="push" id="ONz-qS-BD2"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="2ol-0b-AH9" firstAttribute="trailing" secondItem="rvO-v4-KEW" secondAttribute="trailing" type="default" id="4NU-dg-ZFD"/>
-                            <constraint firstItem="2ol-0b-AH9" firstAttribute="top" secondItem="rvO-v4-KEW" secondAttribute="top" type="default" id="5Y6-G7-hJ6"/>
-                            <constraint firstAttribute="trailing" secondItem="L37-lb-aaf" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="CAs-fM-2oy"/>
-                            <constraint firstAttribute="bottom" secondItem="6Cv-rs-YM6" secondAttribute="bottom" constant="122" id="NWG-E7-XP5"/>
-                            <constraint firstItem="2ol-0b-AH9" firstAttribute="leading" secondItem="rvO-v4-KEW" secondAttribute="leading" type="default" id="U6L-jY-04y"/>
-                            <constraint firstAttribute="trailing" secondItem="6Cv-rs-YM6" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="fxh-4D-xjJ"/>
-                            <constraint firstItem="2ol-0b-AH9" firstAttribute="bottom" secondItem="rvO-v4-KEW" secondAttribute="bottom" type="default" id="i5O-k7-z5z"/>
-                            <constraint firstItem="L37-lb-aaf" firstAttribute="leading" secondItem="rvO-v4-KEW" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="jCT-L6-JPb"/>
-                            <constraint firstItem="anf-RW-vBo" firstAttribute="top" secondItem="6Cv-rs-YM6" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="on0-vt-Hzu"/>
-                            <constraint firstItem="6Cv-rs-YM6" firstAttribute="leading" secondItem="rvO-v4-KEW" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ryc-gW-P6a"/>
-                            <constraint firstItem="anf-RW-vBo" firstAttribute="leading" secondItem="rvO-v4-KEW" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="sEa-98-rkd"/>
-                            <constraint firstAttribute="bottom" secondItem="L37-lb-aaf" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="uA6-bS-szf"/>
-                            <constraint firstAttribute="trailing" secondItem="anf-RW-vBo" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="wXA-7B-Ltf"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Stone Labs" id="to5-HQ-R1F"/>
-                    <connections>
-                        <outlet property="cameraButton" destination="L37-lb-aaf" id="Eyl-rb-HiX"/>
-                        <outlet property="imageView" destination="2ol-0b-AH9" id="wKp-nD-8mp"/>
-                        <outlet property="libraryButton" destination="anf-RW-vBo" id="ZpT-nm-7ep"/>
-                        <outlet property="saveButton" destination="6Cv-rs-YM6" id="Xh2-f7-EfM"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MeB-l3-hLF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="857" y="512"/>
-        </scene>
-        <!--Image Picker View Controller-->
-        <scene sceneID="b8w-3R-iXm">
-            <objects>
-                <viewController id="D9N-Y7-Wyn" customClass="ImagePickerViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Plc-YT-xci">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2AI-Ph-n1n" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1466" y="186"/>
-        </scene>
-        <!--Topo Shot View Controller - Topo Shot-->
-        <scene sceneID="PnY-JJ-z70">
-            <objects>
-                <viewController id="y3c-4k-55l" customClass="TopoShotViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zGq-Vi-CuO">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPu-9A-1bV"/>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="C9F-Rh-CCD">
-                                <segments>
-                                    <segment title="Bolt"/>
-                                    <segment title="Anchor"/>
-                                </segments>
-                                <connections>
-                                    <action selector="toolChanged:" destination="y3c-4k-55l" eventType="valueChanged" id="ymi-uR-DKk"/>
-                                </connections>
-                            </segmentedControl>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="PPu-9A-1bV" firstAttribute="top" secondItem="zGq-Vi-CuO" secondAttribute="top" type="default" id="0fw-MS-OWN"/>
-                            <constraint firstAttribute="bottom" secondItem="C9F-Rh-CCD" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Nk3-A9-qnt"/>
-                            <constraint firstItem="C9F-Rh-CCD" firstAttribute="leading" secondItem="zGq-Vi-CuO" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="QJl-1n-hdo"/>
-                            <constraint firstItem="PPu-9A-1bV" firstAttribute="trailing" secondItem="zGq-Vi-CuO" secondAttribute="trailing" type="default" id="hmc-Jw-DfR"/>
-                            <constraint firstItem="PPu-9A-1bV" firstAttribute="leading" secondItem="zGq-Vi-CuO" secondAttribute="leading" type="default" id="jd8-CO-HhU"/>
-                            <constraint firstAttribute="trailing" secondItem="C9F-Rh-CCD" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="n8o-FF-5bs"/>
-                            <constraint firstItem="PPu-9A-1bV" firstAttribute="bottom" secondItem="zGq-Vi-CuO" secondAttribute="bottom" type="default" id="xlu-uR-oLc"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Topo Shot" id="LRx-Q0-XFw"/>
-                    <connections>
-                        <outlet property="scrollView" destination="PPu-9A-1bV" id="47t-gW-BdG"/>
-                        <outlet property="toolMenu" destination="C9F-Rh-CCD" id="FRy-LB-elV"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kGh-Ob-BS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1466" y="802"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="TTD-ag-oLs">
-            <objects>
-                <navigationController id="JQW-go-EId" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Bj-Bm-0EG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <navigationController definesPresentationContext="YES" id="tWW-kg-tTs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="New Route" id="DXi-zE-7Xi"/>
+                    <navigationItem key="navigationItem" id="5tX-j1-6kd"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iDk-Dw-sVK">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="kkr-JB-qDb" kind="relationship" relationship="rootViewController" id="BIX-3H-LDS"/>
+                        <segue destination="yuI-Uu-DM0" kind="relationship" relationship="rootViewController" id="xVx-Zj-g3h"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mHk-pW-YTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tsm-O3-b4M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="331" y="512"/>
+            <point key="canvasLocation" x="293" y="508"/>
+        </scene>
+        <!--New RouteVC - Stone Labs-->
+        <scene sceneID="5bW-Fm-u82">
+            <objects>
+                <viewController id="yuI-Uu-DM0" customClass="NewRouteVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YiZ-73-cHK">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Stone Labs" id="8k8-0E-W5D">
+                        <barButtonItem key="leftBarButtonItem" image="folder-open.png" id="ztx-Ys-fAu"/>
+                        <barButtonItem key="rightBarButtonItem" image="camera.png" id="vT1-wf-vC3"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fxx-Qi-3LD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="697" y="508"/>
+        </scene>
+        <!--Route ListTVC - Stone Labs-->
+        <scene sceneID="5xv-tE-ZH7">
+            <objects>
+                <tableViewController id="jVd-qu-e08" customClass="RouteListTVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Wz8-fL-4mE">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="P6t-1m-bAa">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="eaP-8N-f7b" kind="push" id="Nen-tx-SVg"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Stone Labs" id="SZe-pP-bFp"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nwA-Ry-DWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="697" y="1511"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ESC-WN-iYv">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="Dge-wP-HyE" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="OYd-lb-xqn">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="tWW-kg-tTs" kind="relationship" relationship="viewControllers" id="3W7-dK-8wC"/>
+                        <segue destination="qSs-li-7uU" kind="relationship" relationship="viewControllers" id="0z7-NO-3ST"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j0t-1e-Fa4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-251" y="998"/>
+        </scene>
+        <!--Navigation Controller - Route List-->
+        <scene sceneID="guM-8P-bhh">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="qSs-li-7uU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Route List" id="XG5-jy-qQs"/>
+                    <navigationItem key="navigationItem" id="Onf-47-365"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ibN-cj-q8o">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jVd-qu-e08" kind="relationship" relationship="rootViewController" id="LEw-eR-Yzr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GXA-B2-o7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="293" y="1511"/>
+        </scene>
+        <!--Route DetailVC-->
+        <scene sceneID="OfM-gm-L7X">
+            <objects>
+                <viewController id="eaP-8N-f7b" customClass="RouteDetailVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ms5-qn-NhY">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5dd-Mf-ty3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IuV-Eg-Tc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1098" y="1511"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera.png" width="16" height="16"/>
+        <image name="folder-open.png" width="16" height="16"/>
+    </resources>
     <classes>
-        <class className="HomePageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomePageViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="getPhoto:" candidateClass="UIButton"/>
-                <relationship kind="action" name="savePhoto:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="cameraButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="libraryButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="saveButton" candidateClass="UIButton"/>
-            </relationships>
+        <class className="NewRouteVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewRouteVC.h"/>
         </class>
-        <class className="ImagePickerViewController" superclassName="UIImagePickerController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImagePickerViewController.h"/>
+        <class className="RouteDetailVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RouteDetailVC.h"/>
         </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="TopoShotViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TopoShotViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="tap:" candidateClass="UITapGestureRecognizer"/>
-                <relationship kind="action" name="toolChanged:" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="tapOutlet" candidateClass="UITapGestureRecognizer"/>
-                <relationship kind="outlet" name="toolMenu" candidateClass="UISegmentedControl"/>
-            </relationships>
+        <class className="RouteListTVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RouteListTVC.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -192,7 +140,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="fib-lu-iOT"/>
-    </inferredMetricsTieBreakers>
 </document>

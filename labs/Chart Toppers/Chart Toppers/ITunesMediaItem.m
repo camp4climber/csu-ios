@@ -24,7 +24,7 @@
         _artworkURL = [NSURL URLWithString:jsonAttributes[@"im:image"][2][@"label"]];
         data = [NSData dataWithContentsOfURL:self.artworkURL];
         _artworkImage = [[UIImage alloc] initWithData:data];
-        _storeURL = jsonAttributes[@"id"][@"label"];
+        _storeURL = [NSURL URLWithString:jsonAttributes[@"id"][@"label"]];
         _rank = rank;
     }
     return self;
