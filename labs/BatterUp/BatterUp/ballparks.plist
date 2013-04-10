@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <array>
+        <dict>
+            <key>team</key>
+            <string>Arizona Diamondbacks</string>
+            <key>icon</key>
+            <string>diamondbacks.png</string>
+            <key>city</key>
+            <string>Phoenix</string>
+            <key>state</key>
+            <string>Arizona</string>
+            <key>stadium</key>
+            <string>Chase Field</string>
+            <key>capacity</key>
+            <integer>48570</integer>
+            <key>address</key>
+            <string>401 East Jefferson Street, Phoenix, Arizona 85001</string>
+            <key>latitude</key>
+            <real>33.445081</real>
+            <key>longitude</key>
+            <real>-112.066564</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Atlanta Braves</string>
+            <key>icon</key>
+            <string>braves.png</string>
+            <key>city</key>
+            <string>Atlanta</string>
+            <key>state</key>
+            <string>Georgia</string>
+            <key>stadium</key>
+            <string>Turner Field</string>
+            <key>capacity</key>
+            <integer>50091</integer>
+            <key>address</key>
+            <string>755 Hank Aaron Drive SE, Atlanta, Georgia 30315</string>
+            <key>latitude</key>
+            <real>33.735044</real>
+            <key>longitude</key>
+            <real>-084.389848</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Baltimore Orioles</string>
+            <key>icon</key>
+            <string>orioles.png</string>
+            <key>city</key>
+            <string>Baltimore</string>
+            <key>state</key>
+            <string>Maryland</string>
+            <key>stadium</key>
+            <string>Oriole Park at Camden Yards</string>
+            <key>capacity</key>
+            <integer>48262</integer>
+            <key>address</key>
+            <string>333 West Camden Street, Baltimore, Maryland 21201</string>
+            <key>latitude</key>
+            <real>39.283487</real>
+            <key>longitude</key>
+            <real>-076.621914</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Boston Red Sox</string>
+            <key>icon</key>
+            <string>red_sox.png</string>
+            <key>city</key>
+            <string>Boston</string>
+            <key>state</key>
+            <string>Massachusetts</string>
+            <key>stadium</key>
+            <string>Fenway Park</string>
+            <key>capacity</key>
+            <integer>38800</integer>
+            <key>address</key>
+            <string>Four Yawkey Way, Boston, Massachusetts 02215</string>
+            <key>latitude</key>
+            <real>42.346202</real>
+            <key>longitude</key>
+            <real>-071.097757</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Chicago Cubs</string>
+            <key>icon</key>
+            <string>cubs.png</string>
+            <key>city</key>
+            <string>Chicago</string>
+            <key>state</key>
+            <string>Illinois</string>
+            <key>stadium</key>
+            <string>Wrigley Field</string>
+            <key>capacity</key>
+            <integer>41100</integer>
+            <key>address</key>
+            <string>1060 West Addison Street, Chicago, Illinois 60613</string>
+            <key>latitude</key>
+            <real>41.947904</real>
+            <key>longitude</key>
+            <real>-087.655810</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Chicago White Sox</string>
+            <key>icon</key>
+            <string>white_sox.png</string>
+            <key>city</key>
+            <string>Chicago</string>
+            <key>state</key>
+            <string>Illinois</string>
+            <key>stadium</key>
+            <string>U.S. Cellular Field</string>
+            <key>capacity</key>
+            <integer>40600</integer>
+            <key>address</key>
+            <string>333 West 35th Street, Chicago, Illinois 60616</string>
+            <key>latitude</key>
+            <real>41.830189</real>
+            <key>longitude</key>
+            <real>-087.634206</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Cincinnati Reds</string>
+            <key>icon</key>
+            <string>reds.png</string>
+            <key>city</key>
+            <string>Cincinnati</string>
+            <key>state</key>
+            <string>Ohio</string>
+            <key>stadium</key>
+            <string>Great American Ball Park</string>
+            <key>capacity</key>
+            <integer>42000</integer>
+            <key>address</key>
+            <string>100 Main Street, Cincinnati, Ohio 45202</string>
+            <key>latitude</key>
+            <real>39.096549</real>
+            <key>longitude</key>
+            <real>-084.509007</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Cleveland Indians</string>
+            <key>icon</key>
+            <string>indians.png</string>
+            <key>city</key>
+            <string>Cleveland</string>
+            <key>state</key>
+            <string>Ohio</string>
+            <key>stadium</key>
+            <string>Progressive Field</string>
+            <key>capacity</key>
+            <integer>45199</integer>
+            <key>address</key>
+            <string>2401 Ontario Street, Cleveland, Ohio 44115</string>
+            <key>latitude</key>
+            <real>41.495914</real>
+            <key>longitude</key>
+            <real>-81.685313</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Colorado Rockies</string>
+            <key>icon</key>
+            <string>rockies.png</string>
+            <key>city</key>
+            <string>Denver</string>
+            <key>state</key>
+            <string>Colorado</string>
+            <key>stadium</key>
+            <string>Coors Field</string>
+            <key>capacity</key>
+            <integer>50200</integer>
+            <key>address</key>
+            <string>2001 Blake Street, Denver, Colorado 80204</string>
+            <key>latitude</key>
+            <real>39.755683</real>
+            <key>longitude</key>
+            <real>-104.994140</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Detroit Tigers</string>
+            <key>icon</key>
+            <string>tigers.png</string>
+            <key>city</key>
+            <string>Detroit</string>
+            <key>state</key>
+            <string>Michigan</string>
+            <key>stadium</key>
+            <string>Comerica Park</string>
+            <key>capacity</key>
+            <integer>41070</integer>
+            <key>address</key>
+            <string>2100 Woodward Avenue, Detroit, Michigan 48201</string>
+            <key>latitude</key>
+            <real>42.339474</real>
+            <key>longitude</key>
+            <real>-083.049027</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Houston Astros</string>
+            <key>icon</key>
+            <string>astros.png</string>
+            <key>city</key>
+            <string>Houston</string>
+            <key>state</key>
+            <string>Texas</string>
+            <key>stadium</key>
+            <string>Minute Maid Park</string>
+            <key>capacity</key>
+            <integer>41000</integer>
+            <key>address</key>
+            <string>501 Crawford Street, Houston, Texas 77002</string>
+            <key>latitude</key>
+            <real>29.756778</real>
+            <key>longitude</key>
+            <real>-095.356324</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Kansas City Royals</string>
+            <key>icon</key>
+            <string>royals.png</string>
+            <key>city</key>
+            <string>Kansas City</string>
+            <key>state</key>
+            <string>Missouri</string>
+            <key>stadium</key>
+            <string>Kauffman Stadium</string>
+            <key>capacity</key>
+            <integer>40600</integer>
+            <key>address</key>
+            <string>1 Royal Way, Kansas City, MO 64129</string>
+            <key>latitude</key>
+            <real>39.051221</real>
+            <key>longitude</key>
+            <real>-094.480817</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Los Angeles Angels of Anaheim</string>
+            <key>icon</key>
+            <string>angels.png</string>
+            <key>city</key>
+            <string>Anaheim</string>
+            <key>state</key>
+            <string>California</string>
+            <key>stadium</key>
+            <string>Angel Stadium of Anaheim</string>
+            <key>capacity</key>
+            <integer>45000</integer>
+            <key>address</key>
+            <string>2000 Gene Autry Way, Anaheim, California 92806</string>
+            <key>latitude</key>
+            <real>33.800244</real>
+            <key>longitude</key>
+            <real>-117.882507</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Los Angeles Dodgers</string>
+            <key>icon</key>
+            <string>dodgers.png</string>
+            <key>city</key>
+            <string>Los Angeles</string>
+            <key>state</key>
+            <string>California</string>
+            <key>stadium</key>
+            <string>Dodger Stadium</string>
+            <key>capacity</key>
+            <integer>56000</integer>
+            <key>address</key>
+            <string>1000 Elysian Park Ave, Los Angeles, California 90012</string>
+            <key>latitude</key>
+            <real>34.073432</real>
+            <key>longitude</key>
+            <real>-118.240260</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Miami Marlins</string>
+            <key>icon</key>
+            <string>marlins.png</string>
+            <key>city</key>
+            <string>Miami Gardens</string>
+            <key>state</key>
+            <string>Florida</string>
+            <key>stadium</key>
+            <string>Marlins Park</string>
+            <key>capacity</key>
+            <integer>36742</integer>
+            <key>address</key>
+            <string>501 Marlins Way, Miami, Florida 33125</string>
+            <key>latitude</key>
+            <real>25.778059</real>
+            <key>longitude</key>
+            <real>-80.219818</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Milwaukee Brewers</string>
+            <key>icon</key>
+            <string>brewers.png</string>
+            <key>city</key>
+            <string>Milwaukee</string>
+            <key>state</key>
+            <string>Wisconsin</string>
+            <key>stadium</key>
+            <string>Miller Park</string>
+            <key>capacity</key>
+            <integer>43000</integer>
+            <key>address</key>
+            <string>201 South Forty-sixth Street, Milwaukee, Wisconsin 53201</string>
+            <key>latitude</key>
+            <real>43.028478</real>
+            <key>longitude</key>
+            <real>-087.971303</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Minnesota Twins</string>
+            <key>icon</key>
+            <string>twins.png</string>
+            <key>city</key>
+            <string>Minneapolis</string>
+            <key>state</key>
+            <string>Minnesota</string>
+            <key>stadium</key>
+            <string>Target Field</string>
+            <key>capacity</key>
+            <integer>39504</integer>
+            <key>address</key>
+            <string>1 Twins Way, Minneapolis, Minnesota</string>
+            <key>latitude</key>
+            <real>44.981724</real>
+            <key>longitude</key>
+            <real>-93.277456</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>New York Mets</string>
+            <key>icon</key>
+            <string>mets.png</string>
+            <key>city</key>
+            <string>Flushing</string>
+            <key>state</key>
+            <string>New York</string>
+            <key>stadium</key>
+            <string>Citi Field</string>
+            <key>capacity</key>
+            <integer>41800</integer>
+            <key>address</key>
+            <string>126th St. Roosevelt Ave.Flushing, New York 11368</string>
+            <key>latitude</key>
+            <real>40.756587</real>
+            <key>longitude</key>
+            <real>-73.847136</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>New York Yankees</string>
+            <key>icon</key>
+            <string>yankees.png</string>
+            <key>city</key>
+            <string>Bronx</string>
+            <key>state</key>
+            <string>New York</string>
+            <key>stadium</key>
+            <string>Yankee Stadium</string>
+            <key>capacity</key>
+            <integer>50086</integer>
+            <key>address</key>
+            <string>East 161st Street &amp; River Avenue, Bronx, New York 10451</string>
+            <key>latitude</key>
+            <real>40.829645</real>
+            <key>longitude</key>
+            <real>-73.926299</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Oakland Athletics</string>
+            <key>icon</key>
+            <string>athletics.png</string>
+            <key>city</key>
+            <string>Oakland</string>
+            <key>state</key>
+            <string>California</string>
+            <key>stadium</key>
+            <string>O.co Coliseum</string>
+            <key>capacity</key>
+            <integer>63026</integer>
+            <key>address</key>
+            <string>7000 Coliseum Way, Oakland, California 94621</string>
+            <key>latitude</key>
+            <real>37.751262</real>
+            <key>longitude</key>
+            <real>-122.201158</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Philadelphia Phillies</string>
+            <key>icon</key>
+            <string>phillies.png</string>
+            <key>city</key>
+            <string>Philadelphia</string>
+            <key>state</key>
+            <string>Pennsylvania</string>
+            <key>stadium</key>
+            <string>Citizens Bank Park</string>
+            <key>capacity</key>
+            <integer>43300</integer>
+            <key>address</key>
+            <string>One Citizens Bank Way, Philadelphia, Pennsylvania 19148-5248</string>
+            <key>latitude</key>
+            <real>39.905437</real>
+            <key>longitude</key>
+            <real>-075.166535</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Pittsburgh Pirates</string>
+            <key>icon</key>
+            <string>pirates.png</string>
+            <key>city</key>
+            <string>Pittsburgh</string>
+            <key>state</key>
+            <string>Pennsylvania</string>
+            <key>stadium</key>
+            <string>PNC Park</string>
+            <key>capacity</key>
+            <integer>38500</integer>
+            <key>address</key>
+            <string>115 Federal St., Pittsburgh, Pennsylvania 15212</string>
+            <key>latitude</key>
+            <real>40.447265</real>
+            <key>longitude</key>
+            <real>-080.006626</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>San Diego Padres</string>
+            <key>icon</key>
+            <string>padres.png</string>
+            <key>city</key>
+            <string>San Diego</string>
+            <key>state</key>
+            <string>California</string>
+            <key>stadium</key>
+            <string>PETCO Park</string>
+            <key>capacity</key>
+            <integer>42445</integer>
+            <key>address</key>
+            <string>19 Tony Gwynn Way, San Diego, California 92101</string>
+            <key>latitude</key>
+            <real>32.706922</real>
+            <key>longitude</key>
+            <real>-117.157324</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>San Francisco Giants</string>
+            <key>icon</key>
+            <string>giants.png</string>
+            <key>city</key>
+            <string>San Francisco</string>
+            <key>state</key>
+            <string>California</string>
+            <key>stadium</key>
+            <string>AT&amp;T Park</string>
+            <key>capacity</key>
+            <integer>41500</integer>
+            <key>address</key>
+            <string>24 Willie Mays Plaza, San Francisco, California 94107</string>
+            <key>latitude</key>
+            <real>37.778473</real>
+            <key>longitude</key>
+            <real>-122.389595</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Seattle Mariners</string>
+            <key>icon</key>
+            <string>mariners.png</string>
+            <key>city</key>
+            <string>Seattle</string>
+            <key>state</key>
+            <string>Washington</string>
+            <key>stadium</key>
+            <string>Safeco Field</string>
+            <key>capacity</key>
+            <integer>47100</integer>
+            <key>address</key>
+            <string>1516 First Avenue S, Seattle, Washington 98134</string>
+            <key>latitude</key>
+            <real>47.591110</real>
+            <key>longitude</key>
+            <real>-122.332880</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>St. Louis Cardinals</string>
+            <key>icon</key>
+            <string>cardinals.png</string>
+            <key>city</key>
+            <string>St. Louis</string>
+            <key>state</key>
+            <string>Missouri</string>
+            <key>stadium</key>
+            <string>Busch Stadium</string>
+            <key>capacity</key>
+            <integer>43975</integer>
+            <key>address</key>
+            <string>700 Clark Street, St. Louis, MO 63102</string>
+            <key>latitude</key>
+            <real>38.624005</real>
+            <key>longitude</key>
+            <real>-090.192793</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Tampa Bay Rays</string>
+            <key>icon</key>
+            <string>rays.png</string>
+            <key>city</key>
+            <string>St. Petersburg</string>
+            <key>state</key>
+            <string>Florida</string>
+            <key>stadium</key>
+            <string>Tropicana Field</string>
+            <key>capacity</key>
+            <integer>43500</integer>
+            <key>address</key>
+            <string>1 Tropicana Drive, St. Petersburg, Florida 33705</string>
+            <key>latitude</key>
+            <real>27.768016</real>
+            <key>longitude</key>
+            <real>-082.653246</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Texas Rangers</string>
+            <key>icon</key>
+            <string>rangers.png</string>
+            <key>city</key>
+            <string>Arlington</string>
+            <key>state</key>
+            <string>Texas</string>
+            <key>stadium</key>
+            <string>Rangers Ballpark in Arlington</string>
+            <key>capacity</key>
+            <integer>49000</integer>
+            <key>address</key>
+            <string>1000 Ballpark Way, Arlington, Texas 76011</string>
+            <key>latitude</key>
+            <real>32.751550</real>
+            <key>longitude</key>
+            <real>-097.083047</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Toronto Blue Jays</string>
+            <key>icon</key>
+            <string>blue_jays.png</string>
+            <key>city</key>
+            <string>Toronto</string>
+            <key>state</key>
+            <string>Ontario</string>
+            <key>stadium</key>
+            <string>Rogers Centre</string>
+            <key>capacity</key>
+            <integer>49539</integer>
+            <key>address</key>
+            <string>1 Blue Jays Way, Toronto, Ontario M5V 1J3</string>
+            <key>latitude</key>
+            <real>43.641305</real>
+            <key>longitude</key>
+            <real>-079.389214</real>
+        </dict>
+        <dict>
+            <key>team</key>
+            <string>Washington Nationals</string>
+            <key>icon</key>
+            <string>nationals.png</string>
+            <key>city</key>
+            <string>Washington</string>
+            <key>state</key>
+            <string>D.C.</string>
+            <key>stadium</key>
+            <string>Nationals Park</string>
+            <key>capacity</key>
+            <integer>41888</integer>
+            <key>address</key>
+            <string>1500 South Capitol Street, SE, Washington, D.C. 20003</string>
+            <key>latitude</key>
+            <real>38.873411</real>
+            <key>longitude</key>
+            <real>-77.007337</real>
+        </dict>
+    </array>
+</plist>

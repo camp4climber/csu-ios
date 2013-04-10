@@ -7,32 +7,56 @@
 //
 
 #import "NewRouteVC.h"
+#import "TopoEditVC.h"
 
-@interface NewRouteVC ()
+@interface NewRouteVC () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end
 
 @implementation NewRouteVC
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (void) viewDidLoad
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    self.useImageButton.backgroundColor = [UIColor whiteColor];
+}
+
+- (IBAction)pickImage:(UIBarButtonItem *)sender
+{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    switch (sender.tag)
+    {
+        case 1:
+            picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+            break;
+        case 2:
+            picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            break;
     }
-    return self;
+    [self presentViewController:picker animated:YES completion:nil];
 }
 
-- (void)viewDidLoad
+- (IBAction)useImage:(UIButton *)sender
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
 }
 
-- (void)didReceiveMemoryWarning
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    TopoEditVC *vc = segue.destinationViewController;
+    vc.routeImage = self.routeImageView.image;
+}
+
+- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    self.useImageButton.hidden = NO;
+    self.routeImageView.image = [info valueForKey:@"UIImagePickerControllerOriginalImage"];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
