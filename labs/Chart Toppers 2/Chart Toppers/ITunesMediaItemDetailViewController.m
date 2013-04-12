@@ -34,7 +34,31 @@
     self.rankLabel.text = [NSString stringWithFormat:@"%d", self.item.rank];
     self.categoryLabel.text = self.item.category;
     self.dateLabel.text = self.item.releaseDate;
-    self.imageView.image = self.item.artworkImage;
+    if (!self.item.summary)
+    {
+        self.summaryText.text = @"No description available.";
+    }
+    else
+    {
+        self.summaryText.text = self.item.summary;
+    }
+    
+    UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    indicatorView.center = self.imageView.center;
+    indicatorView.hidesWhenStopped = YES;
+    [self.view addSubview:indicatorView];
+    [indicatorView startAnimating];
+    
+    dispatch_queue_t q = dispatch_queue_create("image SON", NULL);
+    dispatch_async(q, ^{
+        [NSThread sleepForTimeInterval:drand48() * 3.0];
+        UIImage *image = self.item.artworkImage;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.imageView.image = image;
+            [indicatorView stopAnimating];
+        });
+    });
+    self.summaryText.frame = CGRectMake(20,0,self.summaryText.contentSize.width,self.summaryText.contentSize.height);
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,6 +82,7 @@
 
 - (IBAction)goToURL:(UIButton *)sender {
     NSURL *url = [self.item storeURL];
+    self.priceButton.titleLabel.text = self.item.price;
     [[UIApplication sharedApplication] openURL:url];
 }
 
@@ -74,6 +99,24 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.section)
+    {
+        case 0:
+            //lame lame lame but will do for now
+            return 173;
+            break;
+        case 1:
+            return 44;
+            break;
+        case 2:
+            return self.summaryText.contentSize.height;
+            break;
+    }
+    return 0;
 }
 
 @end

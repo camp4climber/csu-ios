@@ -29,6 +29,7 @@
 		43A35C3F17055FD40078F395 /* MoviesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A35C3E17055FD40078F395 /* MoviesTableViewController.m */; };
 		43A35C4217055FE50078F395 /* ITunesUTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A35C4117055FE50078F395 /* ITunesUTableViewController.m */; };
 		43A35C4517055FF00078F395 /* TVTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A35C4417055FF00078F395 /* TVTableViewController.m */; };
+		43AB31781715EA5300F3C69C /* NetworkActivityHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AB31771715EA5300F3C69C /* NetworkActivityHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,8 @@
 		43A35C4117055FE50078F395 /* ITunesUTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITunesUTableViewController.m; sourceTree = "<group>"; };
 		43A35C4317055FF00078F395 /* TVTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVTableViewController.h; sourceTree = "<group>"; };
 		43A35C4417055FF00078F395 /* TVTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVTableViewController.m; sourceTree = "<group>"; };
+		43AB31761715EA5300F3C69C /* NetworkActivityHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkActivityHelper.h; sourceTree = "<group>"; };
+		43AB31771715EA5300F3C69C /* NetworkActivityHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkActivityHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,8 @@
 				4387B1BB16FE145000DE52B7 /* ViewController.h */,
 				4387B1BC16FE145000DE52B7 /* ViewController.m */,
 				4387B1A716FE144F00DE52B7 /* Supporting Files */,
+				43AB31761715EA5300F3C69C /* NetworkActivityHelper.h */,
+				43AB31771715EA5300F3C69C /* NetworkActivityHelper.m */,
 			);
 			path = "Chart Toppers";
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 				43A35C3F17055FD40078F395 /* MoviesTableViewController.m in Sources */,
 				43A35C4217055FE50078F395 /* ITunesUTableViewController.m in Sources */,
 				43A35C4517055FF00078F395 /* TVTableViewController.m in Sources */,
+				43AB31781715EA5300F3C69C /* NetworkActivityHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

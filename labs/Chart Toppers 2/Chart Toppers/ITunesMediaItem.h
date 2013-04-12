@@ -18,6 +18,7 @@
 @property (nonatomic, readonly) NSURL *artworkURL;
 @property (nonatomic, readonly) UIImage *artworkImage;
 @property (nonatomic, readonly) NSURL *storeURL;
+@property (nonatomic, readonly) NSString *summary;
 @property (nonatomic) int rank;
 
 - (id)initWithJsonAttributes:(NSDictionary *)jsonAttributes rank:(int)rank;

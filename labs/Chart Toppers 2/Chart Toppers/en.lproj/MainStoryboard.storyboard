@@ -86,6 +86,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Apps" id="3bN-D5-Tj1"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="YgJ-Nd-KNA">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uzV-vK-mhM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -150,6 +153,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Books" id="wyb-cI-H0R"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="sFJ-T1-1CX">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kHs-Qd-JxO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -214,6 +220,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Albums" id="hCT-cL-oFV"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="SUR-OU-ajy">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Smt-7w-EZy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -223,7 +232,7 @@
         <scene sceneID="MoP-f2-bgm">
             <objects>
                 <tableViewController id="zpE-JT-xgu" customClass="ITunesMediaItemDetailViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="aMR-Qt-qzT">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="aMR-Qt-qzT">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -355,6 +364,29 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="" id="dd9-mp-IlF">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="staticCell" id="Ymg-c5-T6y">
+                                        <rect key="frame" x="0.0" y="359" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" id="ov4-VN-rb5">
+                                                    <rect key="frame" x="20" y="10" width="260" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="zpE-JT-xgu" id="Jud-xb-7b6"/>
@@ -375,6 +407,7 @@
                         <outlet property="imageView" destination="6yV-jT-wuM" id="diV-xd-wuf"/>
                         <outlet property="priceButton" destination="4D5-x6-Nx2" id="AdB-bq-5Y2"/>
                         <outlet property="rankLabel" destination="2u5-LW-D7t" id="YKE-Di-gav"/>
+                        <outlet property="summaryText" destination="ov4-VN-rb5" id="Oza-q3-wqa"/>
                         <outlet property="titleLabel" destination="pQZ-C0-W3Q" id="2Q9-RU-roa"/>
                     </connections>
                 </tableViewController>
@@ -441,6 +474,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="iTunesU" id="8mm-fl-WSt"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="M4b-NO-iJc">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="enh-pU-u6c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -505,6 +541,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Movies" id="tzq-c9-OJx"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="xpT-ja-PEw">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Di0-sE-O2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -569,6 +608,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="TV" id="Qay-tR-lkx"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="e6J-W8-ciS">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XO0-ld-BBE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -710,6 +752,7 @@
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="priceButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="rankLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="summaryText" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
@@ -733,6 +776,9 @@
         </class>
         <class className="TVTableViewController" superclassName="ITunesMediaItemsTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TVTableViewController.h"/>
+        </class>
+        <class className="UIRefreshControl" superclassName="UIControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRefreshControl.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

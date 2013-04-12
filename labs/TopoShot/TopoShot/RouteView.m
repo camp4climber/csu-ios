@@ -1,14 +1,14 @@
 //
-//  TopoEditView.m
+//  RouteView.m
 //  TopoShot
 //
-//  Created by Tim Whitaker on 3/30/13.
+//  Created by Tim Whitaker on 4/10/13.
 //  Copyright (c) 2013 CSU Chico. All rights reserved.
 //
 
-#import "TopoEditView.h"
+#import "RouteView.h"
 
-@implementation TopoEditView
+@implementation RouteView
 {
     UIBezierPath *path;
     UIImage *incrementalImage;
@@ -21,7 +21,7 @@
     if (self = [super initWithCoder:aDecoder])
     {
         [self setMultipleTouchEnabled:NO];
-        [self setBackgroundColor:[UIColor clearColor]];
+        [self setBackgroundColor:[UIColor whiteColor]];
         path = [UIBezierPath bezierPath];
         [path setLineWidth:2.0];
     }
@@ -86,11 +86,11 @@
 
 - (void)drawBitmap
 {
-    UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0.0);
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 0.0);
     if (!incrementalImage) // first time; paint background white
     {
         UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
-        [[UIColor clearColor] setFill];
+        [[UIColor whiteColor] setFill];
         [rectpath fill];
     }
     [incrementalImage drawAtPoint:CGPointZero];

@@ -8,6 +8,7 @@
 
 #import "BooksTableViewController.h"
 #import "ITunesFetcher.h"
+#import "NetworkActivityHelper.h"
 
 @interface BooksTableViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -21,16 +22,19 @@
 {
     dispatch_queue_t q = dispatch_queue_create("Book Fetch", NULL);
     
-    dispatch_async(q, ^{
-        if (!_mediaThings)
-        {
+    if (!_mediaThings)
+    {
+        dispatch_async(q, ^{
+            [[NetworkActivityHelper sharedInstance] showActivityIndicator];
             _mediaThings = [ITunesFetcher topBooks];
             [NSThread sleepForTimeInterval:drand48() * 3.0];
-        }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[NetworkActivityHelper sharedInstance] hideActivityIndicator];
+                [self.tableView reloadData];
+            });
         });
-    });
+    }
     return _mediaThings;
 }
 

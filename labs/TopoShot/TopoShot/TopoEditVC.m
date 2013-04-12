@@ -7,7 +7,6 @@
 //
 
 #import "TopoEditVC.h"
-#import "TopoEditView.h"
 
 @interface TopoEditVC () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 
@@ -54,7 +53,7 @@
 {
     if (!_colors)
     {
-        _colors = [[NSArray alloc] initWithObjects:[UIColor whiteColor], [UIColor blackColor], [UIColor redColor], [UIColor greenColor], [UIColor blueColor], [UIColor cyanColor], [UIColor brownColor], [UIColor darkGrayColor], [UIColor grayColor], [UIColor lightGrayColor], [UIColor magentaColor], [UIColor orangeColor], [UIColor purpleColor], [UIColor yellowColor], nil];
+        _colors = [[NSArray alloc] initWithObjects:[UIColor whiteColor], [UIColor cyanColor], [UIColor blueColor], [UIColor purpleColor], [UIColor magentaColor], [UIColor redColor], [UIColor orangeColor], [UIColor yellowColor], [UIColor greenColor], [UIColor blackColor], [UIColor darkGrayColor], [UIColor grayColor], [UIColor lightGrayColor], nil];
     }
     return _colors;
 }
@@ -78,15 +77,15 @@
     [self reset];
     
     
-    UITapGestureRecognizer *singleTapRecognizer  = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+    UITapGestureRecognizer *singleTapRecognizer  = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];
     singleTapRecognizer.numberOfTapsRequired     = 1;
     singleTapRecognizer.numberOfTouchesRequired  = 1;
     [self.routeScrollView addGestureRecognizer:singleTapRecognizer];
     
-    UITapGestureRecognizer *doubleTapRecognizer  = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
-    doubleTapRecognizer.numberOfTouchesRequired  = 2;
-    doubleTapRecognizer.numberOfTapsRequired     = 1;
-    [self.routeScrollView addGestureRecognizer:doubleTapRecognizer];
+    UITapGestureRecognizer *twoFingerTapRecognizer  = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(twoFingerTap:)];
+    twoFingerTapRecognizer.numberOfTouchesRequired  = 2;
+    twoFingerTapRecognizer.numberOfTapsRequired     = 1;
+    [self.routeScrollView addGestureRecognizer:twoFingerTapRecognizer];
     
 }
 
@@ -114,7 +113,8 @@
     return self.containerView;
 }
 
-- (void) handleSingleTap:(UITapGestureRecognizer *)recognizer
+//Add Bolt
+- (void) singleTap:(UITapGestureRecognizer *)recognizer
 {
     CGPoint location    = [recognizer locationInView:self.routeScrollView];
     CGFloat scaleFactor = [self.routeScrollView zoomScale];
@@ -128,15 +128,28 @@
         //Bolts
         case 0:
             if (factoredX < self.boltView.frame.size.width && factoredY < self.boltView.frame.size.height)
-            {
-                UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(factoredX-50, factoredY-50, 100, 100)];
+            {                
+                UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(factoredX-75, factoredY-75, 150, 150)];
                 label.text = @"x";
                 [label setTextColor:[UIColor whiteColor]];
                 [label setBackgroundColor:[UIColor clearColor]];
-                label.font = [UIFont fontWithName:@"helvetica" size:100];
+                label.font = [UIFont fontWithName:@"helvetica" size:150];
                 label.textAlignment = NSTextAlignmentCenter;
+                label.userInteractionEnabled = YES;
                 
                 [self.boltView addSubview:label];
+                
+                UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
+                [label addGestureRecognizer:panRecognizer];
+                
+                UITapGestureRecognizer *doubleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
+                doubleTapRecognizer.numberOfTapsRequired = 2;
+                doubleTapRecognizer.numberOfTouchesRequired = 1;
+                [label addGestureRecognizer:doubleTapRecognizer];
+                
+//                UILongPressGestureRecognizer *longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
+//                longPressRecognizer.minimumPressDuration = 0.5;
+//                [label addGestureRecognizer:longPressRecognizer];
             }
             break;
         
@@ -150,7 +163,8 @@
     }
 }
 
-- (void) handleDoubleTap:(UITapGestureRecognizer *)recognizer
+//Add anchor
+- (void) twoFingerTap:(UITapGestureRecognizer *)recognizer
 {
     CGPoint location = [recognizer locationInView:self.routeScrollView];
     CGFloat scaleFactor = [self.routeScrollView zoomScale];
@@ -165,14 +179,18 @@
         case 0:
             if (factoredX < self.boltView.frame.size.width && factoredY < self.boltView.frame.size.height)
             {
-                UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(factoredX-100, factoredY-100, 200, 200)];
+                UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(factoredX-150, factoredY-150, 300, 300)];
                 label.text = @"x x";
                 [label setTextColor:[UIColor whiteColor]];
                 [label setBackgroundColor:[UIColor clearColor]];
-                label.font = [UIFont fontWithName:@"helvetica" size:100];
+                label.font = [UIFont fontWithName:@"helvetica" size:150];
                 label.textAlignment = NSTextAlignmentCenter;
+                label.userInteractionEnabled = YES;
                 
                 [self.boltView addSubview:label];
+                
+                UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
+                [label addGestureRecognizer:panRecognizer];
             }
             break;
         
@@ -180,6 +198,29 @@
         case 1:
             break;
     }
+}
+
+//Move stuff
+- (void) pan:(UIPanGestureRecognizer *)recognizer
+{
+    NSLog(@"Panning");
+   
+    UILabel *label = (UILabel *)recognizer.view;
+	CGPoint translation = [recognizer translationInView:label];
+    
+	// move label
+	label.center = CGPointMake(label.center.x + translation.x,
+                               label.center.y + translation.y);
+    
+	// reset translation
+	[recognizer setTranslation:CGPointZero inView:label];
+}
+
+- (void) doubleTap:(UITapGestureRecognizer *)recognizer
+{
+    NSLog(@"Double Tapped");
+    
+    [recognizer.view removeFromSuperview];
 }
 
 - (IBAction)changeColor:(UIBarButtonItem *)sender
@@ -214,7 +255,7 @@
     {
         //Bolts
         case 0:
-            if (self.boltColorIndex >= 13)
+            if (self.boltColorIndex >= (self.colors.count-1))
             {
                 self.boltColorIndex = 0;
             }
@@ -227,7 +268,7 @@
             
         //Route
         case 1:
-            if (self.routeColorIndex >= 13)
+            if (self.routeColorIndex >= (self.colors.count-1))
             {
                 self.routeColorIndex = 0;
             }
@@ -240,7 +281,7 @@
             
         //Text
         case 2:
-            if (self.textColorIndex >= 13)
+            if (self.textColorIndex >= (self.colors.count-1))
             {
                 self.textColorIndex = 0;
             }
