@@ -46,7 +46,8 @@
     cell.rankLabel.text = [NSString stringWithFormat:@"%i", item.rank];
 
     UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    indicatorView.center = cell.previewImage.center;
+    ITunesMediaItemTableViewCell *comeOn = (ITunesMediaItemTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    indicatorView.center = comeOn.previewImage.center;
     indicatorView.hidesWhenStopped = YES;
     [self.view addSubview:indicatorView];
     [indicatorView startAnimating];
@@ -54,6 +55,11 @@
     dispatch_queue_t q = dispatch_queue_create("getImage", NULL);
     
     dispatch_async(q, ^{
+        indicatorView.center = cell.previewImage.center;
+        indicatorView.hidesWhenStopped = YES;
+        [self.view addSubview:indicatorView];
+        [indicatorView startAnimating];
+
         [NSThread sleepForTimeInterval:drand48() * 3.0];
         UIImage *artIMG = item.artworkImage;
         dispatch_async(dispatch_get_main_queue(), ^{
