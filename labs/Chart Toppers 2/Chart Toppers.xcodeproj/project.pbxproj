@@ -30,6 +30,10 @@
 		43A35C4217055FE50078F395 /* ITunesUTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A35C4117055FE50078F395 /* ITunesUTableViewController.m */; };
 		43A35C4517055FF00078F395 /* TVTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A35C4417055FF00078F395 /* TVTableViewController.m */; };
 		43AB31781715EA5300F3C69C /* NetworkActivityHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AB31771715EA5300F3C69C /* NetworkActivityHelper.m */; };
+		43B8486317191EED008D52EA /* ChartToppersIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 43B8486117191EED008D52EA /* ChartToppersIcon.png */; };
+		43B8486417191EED008D52EA /* ChartToppersIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43B8486217191EED008D52EA /* ChartToppersIcon@2x.png */; };
+		43B8486617191F04008D52EA /* ChartToppersIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43B8486517191F04008D52EA /* ChartToppersIcon@2x.png */; };
+		43B8486817191F59008D52EA /* ChartToppersIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 43B8486717191F59008D52EA /* ChartToppersIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +77,10 @@
 		43A35C4417055FF00078F395 /* TVTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVTableViewController.m; sourceTree = "<group>"; };
 		43AB31761715EA5300F3C69C /* NetworkActivityHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkActivityHelper.h; sourceTree = "<group>"; };
 		43AB31771715EA5300F3C69C /* NetworkActivityHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkActivityHelper.m; sourceTree = "<group>"; };
+		43B8486117191EED008D52EA /* ChartToppersIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChartToppersIcon.png; sourceTree = "<group>"; };
+		43B8486217191EED008D52EA /* ChartToppersIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ChartToppersIcon@2x.png"; sourceTree = "<group>"; };
+		43B8486517191F04008D52EA /* ChartToppersIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ChartToppersIcon@2x.png"; sourceTree = "<group>"; };
+		43B8486717191F59008D52EA /* ChartToppersIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChartToppersIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +100,8 @@
 		4387B19416FE144F00DE52B7 = {
 			isa = PBXGroup;
 			children = (
+				43B8486717191F59008D52EA /* ChartToppersIcon.png */,
+				43B8486517191F04008D52EA /* ChartToppersIcon@2x.png */,
 				4387B1A616FE144F00DE52B7 /* Chart Toppers */,
 				4387B19F16FE144F00DE52B7 /* Frameworks */,
 				4387B19E16FE144F00DE52B7 /* Products */,
@@ -136,6 +146,8 @@
 		4387B1A716FE144F00DE52B7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				43B8486117191EED008D52EA /* ChartToppersIcon.png */,
+				43B8486217191EED008D52EA /* ChartToppersIcon@2x.png */,
 				4387B1A816FE144F00DE52B7 /* Chart Toppers-Info.plist */,
 				4387B1A916FE144F00DE52B7 /* InfoPlist.strings */,
 				4387B1AC16FE144F00DE52B7 /* main.m */,
@@ -247,6 +259,10 @@
 				4387B1B516FE145000DE52B7 /* Default@2x.png in Resources */,
 				4387B1B716FE145000DE52B7 /* Default-568h@2x.png in Resources */,
 				4387B1BA16FE145000DE52B7 /* MainStoryboard.storyboard in Resources */,
+				43B8486317191EED008D52EA /* ChartToppersIcon.png in Resources */,
+				43B8486417191EED008D52EA /* ChartToppersIcon@2x.png in Resources */,
+				43B8486617191F04008D52EA /* ChartToppersIcon@2x.png in Resources */,
+				43B8486817191F59008D52EA /* ChartToppersIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
