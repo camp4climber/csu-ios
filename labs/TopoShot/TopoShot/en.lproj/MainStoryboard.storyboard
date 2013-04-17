@@ -160,7 +160,7 @@
                     <navigationItem key="navigationItem" id="BXM-UJ-Jvw">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="AqN-tS-75q">
-                            <rect key="frame" x="52" y="7" width="203" height="31"/>
+                            <rect key="frame" x="58" y="7" width="203" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Bolts"/>
@@ -168,11 +168,6 @@
                                 <segment title="Text"/>
                             </segments>
                         </segmentedControl>
-                        <barButtonItem key="rightBarButtonItem" title="Color" id="zm5-5a-CuF">
-                            <connections>
-                                <action selector="changeColor:" destination="Hlt-pe-e66" id="BXR-Oz-CyE"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="routeScrollView" destination="6KR-oZ-AQg" id="M2i-Sx-Mb6"/>

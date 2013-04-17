@@ -13,6 +13,6 @@
 @property (strong, nonatomic) UIImage *routeImage;
 @property (weak, nonatomic) IBOutlet UIScrollView *routeScrollView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *toolBar;
-- (IBAction)changeColor:(UIBarButtonItem *)sender;
+//- (IBAction)changeColor:(UIBarButtonItem *)sender;
 
 @end
