@@ -41,4 +41,14 @@
     return self;
 }
 
+- (BOOL) isEqual:(ITunesMediaItem *)object
+{
+    return [self.storeURL isEqual:object.storeURL];
+}
+
+- (NSUInteger) hash
+{
+    return [self.storeURL hash];
+}
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "ITunesMediaItemDetailViewController.h"
+#import "FavoritesManager.h"
 
 @interface ITunesMediaItemDetailViewController ()
 
@@ -41,6 +42,15 @@
     else
     {
         self.summaryText.text = self.item.summary;
+    }
+    
+    if ([[FavoritesManager sharedFavoritesManager] isFavorite:self.item])
+    {
+        self.faveImage.image = [UIImage imageNamed:@"star_yellow.png"];
+    }
+    else
+    {
+        self.faveImage.image = [UIImage imageNamed:@"star_grey.png"];
     }
     
     UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -86,23 +96,21 @@
     [[UIApplication sharedApplication] openURL:url];
 }
 
-- (IBAction)faveTapped:(UITapGestureRecognizer *)sender {
+- (IBAction)faveTapped:(UITapGestureRecognizer *)sender
+{
+    if ([[FavoritesManager sharedFavoritesManager] isFavorite:self.item]) {
+        [[FavoritesManager sharedFavoritesManager] removeFavorite:self.item];
+        self.faveImage.image = [UIImage imageNamed:@"star_grey.png"];
+    }
+    else {
+        [[FavoritesManager sharedFavoritesManager] addFavorite:self.item];
+        self.faveImage.image = [UIImage imageNamed:@"star_yellow.png"];
+    }
 }
 
 
 
 #pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

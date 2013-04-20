@@ -30,8 +30,15 @@
             [NSThread sleepForTimeInterval:drand48() * 3.0];
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [[NetworkActivityHelper sharedInstance] hideActivityIndicator];
-                [self.tableView reloadData];
+                if (_mediaThings == nil)
+                {
+                    [self presentAlertView];
+                }
+                else
+                {
+                    [[NetworkActivityHelper sharedInstance] hideActivityIndicator];
+                    [self.tableView reloadData];
+                }
             });
         });
     }

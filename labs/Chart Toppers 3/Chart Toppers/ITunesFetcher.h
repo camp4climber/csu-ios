@@ -17,5 +17,5 @@
 + (NSArray *) topMovies;
 + (NSArray *) topTV;
 + (NSArray *) topITunesU;
-
++ (BOOL) isNetworkAvailable;
 @end

@@ -60,14 +60,14 @@
     return _descView;
 }
 
-- (NSArray *) colors
-{
-    if (!_colors)
-    {
-        _colors = [[NSArray alloc] initWithObjects:[UIColor whiteColor], [UIColor cyanColor], [UIColor blueColor], [UIColor purpleColor], [UIColor magentaColor], [UIColor redColor], [UIColor orangeColor], [UIColor yellowColor], [UIColor greenColor], [UIColor blackColor], [UIColor darkGrayColor], [UIColor grayColor], [UIColor lightGrayColor], nil];
-    }
-    return _colors;
-}
+//- (NSArray *) colors
+//{
+//    if (!_colors)
+//    {
+//        _colors = [[NSArray alloc] initWithObjects:[UIColor whiteColor], [UIColor cyanColor], [UIColor blueColor], [UIColor purpleColor], [UIColor magentaColor], [UIColor redColor], [UIColor orangeColor], [UIColor yellowColor], [UIColor greenColor], [UIColor blackColor], [UIColor darkGrayColor], [UIColor grayColor], [UIColor lightGrayColor], nil];
+//    }
+//    return _colors;
+//}
 
 - (void) viewDidLoad
 {

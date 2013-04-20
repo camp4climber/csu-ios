@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ITunesMediaItemsTableViewController : UITableViewController
-
+- (void) presentAlertView;
 @end

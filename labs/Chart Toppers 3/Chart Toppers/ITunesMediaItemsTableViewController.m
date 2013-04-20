@@ -86,4 +86,12 @@
     [self.refreshControl endRefreshing];
 }
 
+- (void) presentAlertView
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" message:@"A network connection cannot be detected. Please confirm that you have an active connection and try again." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+    
+    [alert show];
+}
+
+
 @end
