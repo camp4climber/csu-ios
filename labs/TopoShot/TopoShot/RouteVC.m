@@ -1,18 +1,18 @@
 //
-//  RouteDetailVC.m
+//  RouteVC.m
 //  TopoShot
 //
-//  Created by Tim Whitaker on 3/29/13.
+//  Created by Tim Whitaker on 4/24/13.
 //  Copyright (c) 2013 CSU Chico. All rights reserved.
 //
 
-#import "RouteDetailVC.h"
+#import "RouteVC.h"
 
-@interface RouteDetailVC ()
+@interface RouteVC ()
 
 @end
 
-@implementation RouteDetailVC
+@implementation RouteVC
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

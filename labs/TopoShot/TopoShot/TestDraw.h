@@ -1,13 +1,13 @@
 //
-//  RouteDetailVC.h
+//  TestDraw.h
 //  TopoShot
 //
-//  Created by Tim Whitaker on 3/29/13.
+//  Created by Tim Whitaker on 4/24/13.
 //  Copyright (c) 2013 CSU Chico. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface RouteDetailVC : UIViewController
+@interface TestDraw : UIView
 
 @end
