@@ -8,31 +8,83 @@
 
 #import "RouteVC.h"
 
-@interface RouteVC ()
+@interface RouteVC () <UIScrollViewDelegate>
+
+@property (nonatomic, strong) UIView *containerView;
 
 @end
 
 @implementation RouteVC
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (UIView *) containerView
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if (!_containerView)
+    {
+        _containerView = [[UIView alloc] initWithFrame:CGRectZero];
     }
-    return self;
+    return _containerView;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    self.title = self.route.name;
+    
+    [self.routeScrollView addSubview:self.containerView];
+    [self.containerView   addSubview:self.route.baseImageView];
+    [self.containerView   addSubview:self.route.routeView];
+    [self.containerView   addSubview:self.route.descView];
+    [self.containerView   addSubview:self.route.boltView];
+    
+    self.routeScrollView.minimumZoomScale = 0.1;
+    self.routeScrollView.maximumZoomScale = 1.0;
+    self.routeScrollView.delegate         = self;
+    
+    [self.route.boltView  setUserInteractionEnabled:NO];
+    [self.route.descView  setUserInteractionEnabled:NO];
+    [self.route.routeView setUserInteractionEnabled:NO];
+    
+    self.route.routeView.zoom = self.routeScrollView.zoomScale;
+    
+    [self reset];
 }
 
-- (void)didReceiveMemoryWarning
+- (void) reset
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if (self.routeScrollView)
+    {
+        self.routeScrollView.zoomScale   = 1.0;
+        self.routeScrollView.contentSize = CGSizeZero;
+        self.routeScrollView.contentMode = UIViewContentModeScaleAspectFit;
+        
+        self.route.baseImageView.image = self.route.baseImage;
+        [self.route.baseImageView sizeToFit];
+        
+        CGFloat width  = self.route.baseImageView.frame.size.width;
+        CGFloat height = self.route.baseImageView.frame.size.height;
+        
+        self.route.boltView.frame      = CGRectMake(0, 0, width, height);
+        self.route.routeView.frame     = CGRectMake(0, 0, width, height);
+        self.route.descView.frame      = CGRectMake(0, 0, width, height);
+        self.containerView.frame       = CGRectMake(0, 0, width, height);
+        
+        self.route.routeView.backgroundColor = [UIColor clearColor];
+        
+        [self.routeScrollView setContentSize:CGSizeMake(self.containerView.frame.size.width, self.containerView.frame.size.height)];
+        self.routeScrollView.zoomScale = 0.2;
+    }
 }
+
+- (UIView *) viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.containerView;
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+
+}
+
 
 @end

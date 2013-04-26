@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Route.h"
 
 @interface RouteVC : UIViewController
+
+@property (strong, nonatomic) Route *route;
+@property (weak, nonatomic) IBOutlet UIScrollView *routeScrollView;
 
 @end

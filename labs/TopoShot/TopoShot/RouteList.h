@@ -7,9 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Route.h"
 
 @interface RouteList : NSObject
 
-@property (strong, nonatomic) NSArray *routes;
+- (void)addRoute:(Route *)route;
+- (void)removeRoute:(Route *)route;
+- (NSArray *) allRoutes;
+
++ (RouteList *) sharedRouteList;
 
 @end

@@ -8,6 +8,8 @@
 
 #import "NewRouteVC.h"
 #import "TopoEditVC.h"
+#import "Route.h"
+#import "RouteList.h"
 
 @interface NewRouteVC () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -36,15 +38,12 @@
     [self presentViewController:picker animated:YES completion:nil];
 }
 
-- (IBAction)useImage:(UIButton *)sender
-{
-
-}
-
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     TopoEditVC *vc = segue.destinationViewController;
-    vc.routeImage = self.routeImageView.image;
+    vc.route = [[Route alloc] init];
+    vc.route.baseImage = self.routeImageView.image;
+    [[RouteList sharedRouteList] addRoute:vc.route];
 }
 
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info

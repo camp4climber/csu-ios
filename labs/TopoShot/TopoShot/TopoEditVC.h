@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Route.h"
 
 @interface TopoEditVC : UIViewController
 
-@property (strong, nonatomic) UIImage *routeImage;
+@property (strong, nonatomic) Route *route;
 @property (weak, nonatomic) IBOutlet UIScrollView *routeScrollView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *toolBar;
-//- (IBAction)changeColor:(UIBarButtonItem *)sender;
+- (IBAction)changeTool:(UISegmentedControl *)sender;
 
 @end

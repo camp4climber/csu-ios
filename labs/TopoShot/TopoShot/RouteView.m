@@ -7,6 +7,7 @@
 //
 
 #import "RouteView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation RouteView
 {
@@ -21,9 +22,9 @@
     if (self = [super initWithCoder:aDecoder])
     {
         [self setMultipleTouchEnabled:NO];
-        [self setBackgroundColor:[UIColor whiteColor]];
+        [self setBackgroundColor:[UIColor clearColor]];
         path = [UIBezierPath bezierPath];
-        [path setLineWidth:2.0];
+        [path setLineWidth:20.0];
     }
     return self;
 }
@@ -34,7 +35,7 @@
     if (self) {
         [self setMultipleTouchEnabled:NO];
         path = [UIBezierPath bezierPath];
-        [path setLineWidth:2.0];
+        [path setLineWidth:20.0];
     }
     return self;
 }
@@ -58,6 +59,7 @@
     CGPoint p = [touch locationInView:self];
     ctr++;
     pts[ctr] = p;
+    
     if (ctr == 4)
     {
         pts[3] = CGPointMake((pts[2].x + pts[4].x)/2.0, (pts[2].y + pts[4].y)/2.0); // move the endpoint to the middle of the line joining the second control point of the first Bezier segment and the first control point of the second Bezier segment
@@ -86,11 +88,11 @@
 
 - (void)drawBitmap
 {
-    UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 0.0);
-    if (!incrementalImage) // first time; paint background white
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, self.zoom);
+    if (!incrementalImage)
     {
         UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
-        [[UIColor whiteColor] setFill];
+        [[UIColor clearColor] setFill];
         [rectpath fill];
     }
     [incrementalImage drawAtPoint:CGPointZero];
@@ -99,4 +101,10 @@
     incrementalImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
 }
+
++(Class)layerClass
+{
+    return [CALayer class];
+}
+
 @end

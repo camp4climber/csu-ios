@@ -7,21 +7,13 @@
 //
 
 #import "InfoEditVC.h"
+#import "RouteList.h"
 
-@interface InfoEditVC ()
+@interface InfoEditVC () <UITextFieldDelegate, UITextViewDelegate>
 
 @end
 
 @implementation InfoEditVC
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -29,10 +21,35 @@
 	// Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [textField resignFirstResponder];
+    return NO;
+}
+
+- (void) textFieldDidEndEditing:(UITextField *)textField
+{
+    switch (textField.tag)
+    {
+        case 0:
+            self.route.name = self.nameField.text;
+            break;
+        case 1:
+            self.route.difficulty = self.difficultyField.text;
+            break;
+    }
+}
+
+- (void) textViewDidEndEditing:(UITextView *)textView
+{
+    self.route.notes = self.notesField.text;
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    self.route.name       = self.nameField.text;
+    self.route.difficulty = self.difficultyField.text;
+    self.route.notes      = self.notesField.text;
 }
 
 @end

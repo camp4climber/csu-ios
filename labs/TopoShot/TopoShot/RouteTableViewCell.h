@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface RouteTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *difficultyLabel;
 
 @end

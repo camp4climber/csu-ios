@@ -7,18 +7,14 @@
 //
 
 #import "TopoEditVC.h"
+#import "RouteView.h"
 #import "UIView+findFirstResponder.h"
+#import "TestDraw.h"
+#import "InfoEditVC.h"
 
 @interface TopoEditVC () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UIView *containerView;
-@property (nonatomic, strong) UIImageView *imageView;
-@property (nonatomic, strong) UIView *boltView;
-@property (nonatomic, strong) UIView *descView;
-@property (nonatomic, strong) NSArray *colors;
-@property (nonatomic) int boltColorIndex;
-@property (nonatomic) int routeColorIndex;
-@property (nonatomic) int textColorIndex;
 
 @end
 
@@ -33,71 +29,39 @@
     return _containerView;
 }
 
-- (UIImageView *) imageView
-{
-    if (!_imageView)
-    {
-        _imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-    }
-    return _imageView;
-}
-
-- (UIView *) boltView
-{
-    if (!_boltView)
-    {
-        _boltView = [[UIView alloc] initWithFrame:CGRectZero];
-    }
-    return _boltView;
-}
-
-- (UIView *) descView
-{
-    if (!_descView)
-    {
-        _descView = [[UIView alloc] initWithFrame:CGRectZero];
-    }
-    return _descView;
-}
-
-//- (NSArray *) colors
-//{
-//    if (!_colors)
-//    {
-//        _colors = [[NSArray alloc] initWithObjects:[UIColor whiteColor], [UIColor cyanColor], [UIColor blueColor], [UIColor purpleColor], [UIColor magentaColor], [UIColor redColor], [UIColor orangeColor], [UIColor yellowColor], [UIColor greenColor], [UIColor blackColor], [UIColor darkGrayColor], [UIColor grayColor], [UIColor lightGrayColor], nil];
-//    }
-//    return _colors;
-//}
-
 - (void) viewDidLoad
 {
     [super viewDidLoad];
     
-    self.boltColorIndex  = 0;
-    self.routeColorIndex = 0;
-    self.textColorIndex  = 0;
-    
     [self.routeScrollView addSubview:self.containerView];
-    [self.containerView   addSubview:self.imageView];
-    [self.containerView   addSubview:self.boltView];
-    [self.containerView   addSubview:self.descView];
-    
+    [self.containerView   addSubview:self.route.baseImageView];
+    [self.containerView   addSubview:self.route.routeView];
+    [self.containerView   addSubview:self.route.descView];
+    [self.containerView   addSubview:self.route.boltView];
+
     self.routeScrollView.minimumZoomScale = 0.1;
     self.routeScrollView.maximumZoomScale = 1.0;
     self.routeScrollView.delegate         = self;
     
+    [self.route.routeView setUserInteractionEnabled:YES];
+    self.route.routeView.zoom = self.routeScrollView.zoomScale;
+    
     [self reset];
     
+    UITapGestureRecognizer *addBoltRecognizer    = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addBolt:)];
+    addBoltRecognizer.numberOfTapsRequired       = 1;
+    addBoltRecognizer.numberOfTouchesRequired    = 1;
+    [self.route.boltView addGestureRecognizer:addBoltRecognizer];
     
-    UITapGestureRecognizer *singleTapRecognizer  = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];
-    singleTapRecognizer.numberOfTapsRequired     = 1;
-    singleTapRecognizer.numberOfTouchesRequired  = 1;
-    [self.routeScrollView addGestureRecognizer:singleTapRecognizer];
+    UITapGestureRecognizer *addAnchorRecognizer  = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addAnchor:)];
+    addAnchorRecognizer.numberOfTouchesRequired  = 2;
+    addAnchorRecognizer.numberOfTapsRequired     = 1;
+    [self.route.boltView addGestureRecognizer:addAnchorRecognizer];
     
-    UITapGestureRecognizer *twoFingerTapRecognizer  = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(twoFingerTap:)];
-    twoFingerTapRecognizer.numberOfTouchesRequired  = 2;
-    twoFingerTapRecognizer.numberOfTapsRequired     = 1;
-    [self.routeScrollView addGestureRecognizer:twoFingerTapRecognizer];
+    UITapGestureRecognizer *addTextRecognizer    = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addText:)];
+    addTextRecognizer.numberOfTouchesRequired    = 1;
+    addTextRecognizer.numberOfTapsRequired       = 1;
+    [self.route.descView addGestureRecognizer:addTextRecognizer];
     
 }
 
@@ -109,14 +73,18 @@
         self.routeScrollView.contentSize = CGSizeZero;
         self.routeScrollView.contentMode = UIViewContentModeScaleAspectFit;
         
-        self.imageView.image = self.routeImage;
-        [self.imageView sizeToFit];
+        self.route.baseImageView.image = self.route.baseImage;
+        [self.route.baseImageView sizeToFit];
         
-        self.boltView.frame = CGRectMake(0, 0, self.imageView.frame.size.width, self.imageView.frame.size.height);
-        self.descView.frame = CGRectMake(0, 0, self.imageView.frame.size.width, self.imageView.frame.size.height);
-
+        CGFloat width  = self.route.baseImageView.frame.size.width;
+        CGFloat height = self.route.baseImageView.frame.size.height;
         
-        self.containerView.frame = CGRectMake(0, 0, self.imageView.frame.size.width, self.imageView.frame.size.height);
+        self.route.boltView.frame      = CGRectMake(0, 0, width, height);
+        self.route.routeView.frame     = CGRectMake(0, 0, width, height);
+        self.route.descView.frame      = CGRectMake(0, 0, width, height);
+        self.containerView.frame       = CGRectMake(0, 0, width, height);
+        
+        self.route.routeView.backgroundColor = [UIColor clearColor];
         
         [self.routeScrollView setContentSize:CGSizeMake(self.containerView.frame.size.width, self.containerView.frame.size.height)];
         self.routeScrollView.zoomScale = 0.2;
@@ -128,117 +96,104 @@
     return self.containerView;
 }
 
-//Add Bolt
-- (void) singleTap:(UITapGestureRecognizer *)recognizer
+- (void) addBolt:(UITapGestureRecognizer *)recognizer
 {
     CGPoint location    = [recognizer locationInView:self.routeScrollView];
     CGFloat scaleFactor = [self.routeScrollView zoomScale];
     CGFloat factoredX   = location.x * (1/scaleFactor);
     CGFloat factoredY   = location.y * (1/scaleFactor);
+    
+    if (factoredX < self.route.boltView.frame.size.width && factoredY < self.route.boltView.frame.size.height)
+    {
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(factoredX-75, factoredY-75, 150, 150)];
+        label.text = @"x";
+        [label setTextColor:[UIColor whiteColor]];
+        [label setBackgroundColor:[UIColor clearColor]];
+        label.font = [UIFont fontWithName:@"helvetica" size:150];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.userInteractionEnabled = YES;
+        
+        [self.route.boltView addSubview:label];
+        
+        UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
+        [label addGestureRecognizer:panRecognizer];
+        
+        UITapGestureRecognizer *removeItemRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeItem:)];
+        removeItemRecognizer.numberOfTouchesRequired = 1;
+        removeItemRecognizer.numberOfTapsRequired    = 2;
+        [label addGestureRecognizer:removeItemRecognizer];
+    }
+
+}
+
+- (void) addAnchor:(UITapGestureRecognizer *)recognizer
+{
+    CGPoint location    = [recognizer locationInView:self.routeScrollView];
+    CGFloat scaleFactor = [self.routeScrollView zoomScale];
+    CGFloat factoredX   = location.x * (1/scaleFactor);
+    CGFloat factoredY   = location.y * (1/scaleFactor);
+    
+    if (factoredX < self.route.boltView.frame.size.width && factoredY < self.route.boltView.frame.size.height)
+    {
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(factoredX-150, factoredY-150, 300, 300)];
+        label.text = @"x x";
+        [label setTextColor:[UIColor whiteColor]];
+        [label setBackgroundColor:[UIColor clearColor]];
+        label.font = [UIFont fontWithName:@"helvetica" size:150];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.userInteractionEnabled = YES;
+        
+        [self.route.boltView addSubview:label];
+        
+        UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
+        [label addGestureRecognizer:panRecognizer];
+        
+        UITapGestureRecognizer *removeItemRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeItem:)];
+        removeItemRecognizer.numberOfTouchesRequired = 1;
+        removeItemRecognizer.numberOfTapsRequired    = 2;
+        [label addGestureRecognizer:removeItemRecognizer];
+    }
+}
+
+- (void) addText:(UITapGestureRecognizer *)recognizer
+{
+    CGPoint location    = [recognizer locationInView:self.routeScrollView];
+    CGFloat scaleFactor = [self.routeScrollView zoomScale];
+    CGFloat factoredX   = location.x * (1/scaleFactor);
+    CGFloat factoredY   = location.y * (1/scaleFactor);
+    
     UIView *firstResponder = [[UIView alloc] init];
     firstResponder = [self.view findFirstResponder];
-
     
-    NSLog(@"%f - %f:%f", scaleFactor, factoredX, factoredY);
-    
-    switch (self.toolBar.selectedSegmentIndex)
+    if (firstResponder)
     {
-        //Bolts
-        case 0:
-            if (factoredX < self.boltView.frame.size.width && factoredY < self.boltView.frame.size.height)
-            {                
-                UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(factoredX-75, factoredY-75, 150, 150)];
-                label.text = @"x";
-                [label setTextColor:[UIColor whiteColor]];
-                [label setBackgroundColor:[UIColor clearColor]];
-                label.font = [UIFont fontWithName:@"helvetica" size:150];
-                label.textAlignment = NSTextAlignmentCenter;
-                label.userInteractionEnabled = YES;
-                
-                [self.boltView addSubview:label];
-                
-                UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
-                [label addGestureRecognizer:panRecognizer];
-                
-                UILongPressGestureRecognizer *longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
-                longPressRecognizer.minimumPressDuration = 0.5;
-                [label addGestureRecognizer:longPressRecognizer];
-            }
-            break;
+        [self.view endEditing:YES];
+    }
+    else if (factoredX < self.route.descView.frame.size.width && factoredY < self.route.descView.frame.size.height)
+    {
+        UITextView *text = [[UITextView alloc] initWithFrame:CGRectMake(factoredX, factoredY, 600, 300)];
+        [text setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.5]];
+        [text setTextColor:[UIColor whiteColor]];
+        text.editable = YES;
+        text.font = [UIFont fontWithName:@"helvetica" size:50];
         
-        //Route
-        case 1:
-            break;
+        [self.route.descView addSubview:text];
         
-        //Text
-        case 2:
-            if (firstResponder)
-            {
-                [self.view endEditing:YES];
-            }
-            else if (factoredX < self.descView.frame.size.width && factoredY < self.descView.frame.size.height)
-            {
-                UITextView *text = [[UITextView alloc] initWithFrame:CGRectMake(factoredX, factoredY, 600, 300)];
-                [text setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.5]];
-                [text setTextColor:[UIColor whiteColor]];
-                text.editable = YES;
-                text.font = [UIFont fontWithName:@"helvetica" size:50];
-                
-                [self.descView addSubview:text];
-                
-                UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
-                [text addGestureRecognizer:panRecognizer];
-                
-                UILongPressGestureRecognizer *longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
-                longPressRecognizer.minimumPressDuration = 0.5;
-                [text addGestureRecognizer:longPressRecognizer];
-            }
-            break;
+        UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
+        [text addGestureRecognizer:panRecognizer];
+        
+        UITapGestureRecognizer *removeItemRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeItem:)];
+        removeItemRecognizer.numberOfTouchesRequired = 1;
+        removeItemRecognizer.numberOfTapsRequired    = 2;
+        [text addGestureRecognizer:removeItemRecognizer];
     }
 }
 
-//Add anchor
-- (void) twoFingerTap:(UITapGestureRecognizer *)recognizer
+- (void) removeItem:(UITapGestureRecognizer *)recognizer
 {
-    CGPoint location = [recognizer locationInView:self.routeScrollView];
-    CGFloat scaleFactor = [self.routeScrollView zoomScale];
-    CGFloat factoredX = location.x * (1/scaleFactor);
-    CGFloat factoredY = location.y * (1/scaleFactor);
-    
-    NSLog(@"%f - %f:%f", scaleFactor, factoredX, factoredY);
-    
-    switch (self.toolBar.selectedSegmentIndex)
-    {
-        //Bolts
-        case 0:
-            if (factoredX < self.boltView.frame.size.width && factoredY < self.boltView.frame.size.height)
-            {
-                UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(factoredX-150, factoredY-150, 300, 300)];
-                label.text = @"x x";
-                [label setTextColor:[UIColor whiteColor]];
-                [label setBackgroundColor:[UIColor clearColor]];
-                label.font = [UIFont fontWithName:@"helvetica" size:150];
-                label.textAlignment = NSTextAlignmentCenter;
-                label.userInteractionEnabled = YES;
-                
-                [self.boltView addSubview:label];
-                
-                UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
-                [label addGestureRecognizer:panRecognizer];
-                
-                UILongPressGestureRecognizer *longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
-                longPressRecognizer.minimumPressDuration = 0.5;
-                [label addGestureRecognizer:longPressRecognizer];
-            }
-            break;
-        
-        //Route
-        case 1:
-            break;
-    }
+    [recognizer.view removeFromSuperview];
 }
 
-//Move stuff
 - (void) pan:(UIPanGestureRecognizer *)recognizer
 {
     NSLog(@"Panning");
@@ -246,88 +201,41 @@
     UIView *view = recognizer.view;
 	CGPoint translation = [recognizer translationInView:view];
     
-	// move label
 	view.center = CGPointMake(view.center.x + translation.x,
                                view.center.y + translation.y);
     
-	// reset translation
 	[recognizer setTranslation:CGPointZero inView:view];
 }
 
-- (void) longPress:(UITapGestureRecognizer *)recognizer
+- (IBAction)changeTool:(UISegmentedControl *)sender
 {
-    [recognizer.view removeFromSuperview];
+    switch (sender.selectedSegmentIndex)
+    {
+        case 0:
+            self.routeScrollView.scrollEnabled = YES;
+            [self.containerView bringSubviewToFront:self.route.boltView];
+            break;
+        case 1:
+            self.routeScrollView.scrollEnabled = NO;
+            [self.routeScrollView delaysContentTouches];
+            [self.containerView bringSubviewToFront:self.route.routeView];
+            break;
+        case 2:
+            self.routeScrollView.scrollEnabled = YES;
+            [self.containerView bringSubviewToFront:self.route.descView];
+            break;
+    }
 }
 
-//- (IBAction)changeColor:(UIBarButtonItem *)sender
-//{
-//    UIColor *color = [self nextColor];
-//    switch (self.toolBar.selectedSegmentIndex)
-//    {
-//        //Bolts
-//        case 0:
-//            for (UIView *v in [self.boltView subviews])
-//            {
-//                if ([v isKindOfClass:[UILabel class]])
-//                {
-//                    [(UILabel *)v setTextColor:color];
-//                }
-//            }
-//            break;
-//            
-//        //Route
-//        case 1:
-//            break;
-//            
-//        //Text
-//        case 2:
-//            break;
-//    }
-//}
+- (void) scrollViewDidZoom:(UIScrollView *)scrollView
+{
+    self.route.routeView.zoom = scrollView.zoomScale;
+}
 
-//- (UIColor *) nextColor
-//{
-//    switch (self.toolBar.selectedSegmentIndex)
-//    {
-//        //Bolts
-//        case 0:
-//            if (self.boltColorIndex >= (self.colors.count-1))
-//            {
-//                self.boltColorIndex = 0;
-//            }
-//            else
-//            {
-//                self.boltColorIndex++;
-//            }
-//            return self.colors[self.boltColorIndex];
-//            break;
-//            
-//        //Route
-//        case 1:
-//            if (self.routeColorIndex >= (self.colors.count-1))
-//            {
-//                self.routeColorIndex = 0;
-//            }
-//            else
-//            {
-//                self.routeColorIndex++;
-//            }
-//            return self.colors[self.routeColorIndex];
-//            break;
-//            
-//        //Text
-//        case 2:
-//            if (self.textColorIndex >= (self.colors.count-1))
-//            {
-//                self.textColorIndex = 0;
-//            }
-//            else
-//            {
-//                self.textColorIndex++;
-//            }
-//            return self.colors[self.textColorIndex];
-//            break;
-//    }
-//    return [UIColor whiteColor];
-//}
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    InfoEditVC *vc = segue.destinationViewController;
+    vc.route = self.route;
+}
+
 @end

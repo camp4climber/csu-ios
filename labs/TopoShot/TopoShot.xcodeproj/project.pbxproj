@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4315138017285B3E005FB524 /* TestDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 4315137F17285B3E005FB524 /* TestDraw.m */; };
+		431513831728C8BD005FB524 /* RouteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 431513821728C8BD005FB524 /* RouteTableViewCell.m */; };
+		431513861728CD91005FB524 /* InfoEditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 431513851728CD91005FB524 /* InfoEditVC.m */; };
+		4349EDB81724E89000469454 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4349EDB71724E89000469454 /* QuartzCore.framework */; };
+		4379B5EC1729076C0069133B /* RouteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379B5EB1729076C0069133B /* RouteVC.m */; };
 		4388EBCD170E6BE60033D799 /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4388EBCB170E6BE60033D799 /* camera@2x.png */; };
 		4388EBCE170E6BE60033D799 /* folder-open@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4388EBCC170E6BE60033D799 /* folder-open@2x.png */; };
 		438B77CD16EC5CD100022B35 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438B77CC16EC5CD100022B35 /* UIKit.framework */; };
@@ -21,7 +26,6 @@
 		438B77E616EC5CD100022B35 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 438B77E416EC5CD100022B35 /* MainStoryboard.storyboard */; };
 		43A35C4B1706740E0078F395 /* RouteListTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A35C4A1706740E0078F395 /* RouteListTVC.m */; };
 		43A35C4E1706743F0078F395 /* NewRouteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A35C4D1706743F0078F395 /* NewRouteVC.m */; };
-		43A35C51170674890078F395 /* RouteDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A35C50170674890078F395 /* RouteDetailVC.m */; };
 		43A35C54170674FA0078F395 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A35C53170674FA0078F395 /* Route.m */; };
 		43A35C57170680000078F395 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 43A35C55170680000078F395 /* camera.png */; };
 		43A35C58170680000078F395 /* folder-open.png in Resources */ = {isa = PBXBuildFile; fileRef = 43A35C56170680000078F395 /* folder-open.png */; };
@@ -32,6 +36,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4315137E17285B3E005FB524 /* TestDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDraw.h; sourceTree = "<group>"; };
+		4315137F17285B3E005FB524 /* TestDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDraw.m; sourceTree = "<group>"; };
+		431513811728C8BD005FB524 /* RouteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteTableViewCell.h; sourceTree = "<group>"; };
+		431513821728C8BD005FB524 /* RouteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteTableViewCell.m; sourceTree = "<group>"; };
+		431513841728CD91005FB524 /* InfoEditVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoEditVC.h; sourceTree = "<group>"; };
+		431513851728CD91005FB524 /* InfoEditVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoEditVC.m; sourceTree = "<group>"; };
+		4349EDB71724E89000469454 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4379B5EA1729076C0069133B /* RouteVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteVC.h; sourceTree = "<group>"; };
+		4379B5EB1729076C0069133B /* RouteVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteVC.m; sourceTree = "<group>"; };
 		4388EBCB170E6BE60033D799 /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
 		4388EBCC170E6BE60033D799 /* folder-open@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder-open@2x.png"; sourceTree = "<group>"; };
 		438B77C916EC5CD100022B35 /* TopoShot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopoShot.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,8 +65,6 @@
 		43A35C4A1706740E0078F395 /* RouteListTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteListTVC.m; sourceTree = "<group>"; };
 		43A35C4C1706743F0078F395 /* NewRouteVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRouteVC.h; sourceTree = "<group>"; };
 		43A35C4D1706743F0078F395 /* NewRouteVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRouteVC.m; sourceTree = "<group>"; };
-		43A35C4F170674890078F395 /* RouteDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteDetailVC.h; sourceTree = "<group>"; };
-		43A35C50170674890078F395 /* RouteDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteDetailVC.m; sourceTree = "<group>"; };
 		43A35C52170674FA0078F395 /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Route.h; sourceTree = "<group>"; };
 		43A35C53170674FA0078F395 /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Route.m; sourceTree = "<group>"; };
 		43A35C55170680000078F395 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
@@ -73,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4349EDB81724E89000469454 /* QuartzCore.framework in Frameworks */,
 				438B77CD16EC5CD100022B35 /* UIKit.framework in Frameworks */,
 				438B77CF16EC5CD100022B35 /* Foundation.framework in Frameworks */,
 				438B77D116EC5CD100022B35 /* CoreGraphics.framework in Frameworks */,
@@ -98,6 +110,10 @@
 			children = (
 				43AB31791716081400F3C69C /* RouteView.h */,
 				43AB317A1716081400F3C69C /* RouteView.m */,
+				4315137E17285B3E005FB524 /* TestDraw.h */,
+				4315137F17285B3E005FB524 /* TestDraw.m */,
+				431513811728C8BD005FB524 /* RouteTableViewCell.h */,
+				431513821728C8BD005FB524 /* RouteTableViewCell.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -109,10 +125,12 @@
 				43A35C4D1706743F0078F395 /* NewRouteVC.m */,
 				43A35C491706740E0078F395 /* RouteListTVC.h */,
 				43A35C4A1706740E0078F395 /* RouteListTVC.m */,
-				43A35C4F170674890078F395 /* RouteDetailVC.h */,
-				43A35C50170674890078F395 /* RouteDetailVC.m */,
 				43A35C591706B2470078F395 /* TopoEditVC.h */,
 				43A35C5A1706B2470078F395 /* TopoEditVC.m */,
+				431513841728CD91005FB524 /* InfoEditVC.h */,
+				431513851728CD91005FB524 /* InfoEditVC.m */,
+				4379B5EA1729076C0069133B /* RouteVC.h */,
+				4379B5EB1729076C0069133B /* RouteVC.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -120,6 +138,7 @@
 		438B77C016EC5CD000022B35 = {
 			isa = PBXGroup;
 			children = (
+				4349EDB71724E89000469454 /* QuartzCore.framework */,
 				438B77D216EC5CD100022B35 /* TopoShot */,
 				438B77CB16EC5CD100022B35 /* Frameworks */,
 				438B77CA16EC5CD100022B35 /* Products */,
@@ -253,12 +272,15 @@
 				438B77DD16EC5CD100022B35 /* TopoShotAppDelegate.m in Sources */,
 				43A35C4B1706740E0078F395 /* RouteListTVC.m in Sources */,
 				43A35C4E1706743F0078F395 /* NewRouteVC.m in Sources */,
-				43A35C51170674890078F395 /* RouteDetailVC.m in Sources */,
 				43A35C54170674FA0078F395 /* Route.m in Sources */,
 				43A35C5B1706B2470078F395 /* TopoEditVC.m in Sources */,
 				43A35C5E170771A50078F395 /* RouteList.m in Sources */,
 				43AB317B1716081500F3C69C /* RouteView.m in Sources */,
 				43E44028171CACC400516B44 /* UIView+findFirstResponder.m in Sources */,
+				4315138017285B3E005FB524 /* TestDraw.m in Sources */,
+				431513831728C8BD005FB524 /* RouteTableViewCell.m in Sources */,
+				431513861728CD91005FB524 /* InfoEditVC.m in Sources */,
+				4379B5EC1729076C0069133B /* RouteVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

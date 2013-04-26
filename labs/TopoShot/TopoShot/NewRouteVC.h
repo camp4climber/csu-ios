@@ -13,6 +13,5 @@
 @property (weak, nonatomic) IBOutlet UIImageView *routeImageView;
 @property (weak, nonatomic) IBOutlet UIButton *useImageButton;
 - (IBAction)pickImage:(UIBarButtonItem *)sender;
-- (IBAction)useImage:(UIButton *)sender;
 
 @end
