@@ -242,10 +242,6 @@
         self.routeScrollView.scrollEnabled = YES;
         [self.containerView bringSubviewToFront:self.route.descView];
     }
-    else
-    {
-        NSLog(@"None");
-    }
 }
 
 @end

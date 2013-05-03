@@ -19,15 +19,17 @@ enum State : NSInteger {Began, Changed, Possible, Ended, Canceled, Recognized, F
 @property (nonatomic, strong) UIImageView *boltButtonView;
 @property (nonatomic, strong) UIImageView *routeButtonView;
 @property (nonatomic, strong) UIImageView *textButtonView;
+@property (nonatomic, strong) UIImageView *checkButtonView;
 @end
 
 @implementation EditMenuGR
+
 
 - (UIImageView *) boltButtonView
 {
     if (!_boltButtonView)
     {
-        UIImage *boltImage = [UIImage imageNamed:@"placeholder.gif"];
+        UIImage *boltImage = [UIImage imageNamed:@"bolt_button.png"];
         _boltButtonView = [[UIImageView alloc] initWithImage:boltImage];
     }
     return _boltButtonView;
@@ -37,7 +39,7 @@ enum State : NSInteger {Began, Changed, Possible, Ended, Canceled, Recognized, F
 {
     if (!_routeButtonView)
     {
-        UIImage *routeImage = [UIImage imageNamed:@"placeholder.gif"];
+        UIImage *routeImage = [UIImage imageNamed:@"route_button.png"];
         _routeButtonView = [[UIImageView alloc] initWithImage:routeImage];
     }
     return _routeButtonView;
@@ -47,10 +49,20 @@ enum State : NSInteger {Began, Changed, Possible, Ended, Canceled, Recognized, F
 {
     if (!_textButtonView)
     {
-        UIImage *textImage = [UIImage imageNamed:@"placeholder.gif"];
+        UIImage *textImage = [UIImage imageNamed:@"text_button.png"];
         _textButtonView = [[UIImageView alloc] initWithImage:textImage];
     }
     return _textButtonView;
+}
+
+- (UIImageView *) checkButtonView
+{
+    if (!_checkButtonView)
+    {
+        UIImage *checkImage = [UIImage imageNamed:@"checkmark_button.png"];
+        _checkButtonView = [[UIImageView alloc] initWithImage:checkImage];
+    }
+    return _checkButtonView;
 }
 
 - (void) touchesBegan: (NSSet *)touches withEvent:(UIEvent *)event
@@ -141,9 +153,9 @@ enum State : NSInteger {Began, Changed, Possible, Ended, Canceled, Recognized, F
 - (void) reset
 {
     [UIView animateWithDuration:0.5 animations:^{
-        self.boltButtonView.image  = [UIImage imageNamed:@"placeholder.gif"];
-        self.routeButtonView.image = [UIImage imageNamed:@"placeholder.gif"];
-        self.textButtonView.image  = [UIImage imageNamed:@"placeholder.gif"];
+        self.boltButtonView.image  = [UIImage imageNamed:@"bolt_button.png"];
+        self.routeButtonView.image = [UIImage imageNamed:@"route_button.png"];
+        self.textButtonView.image  = [UIImage imageNamed:@"text_button.png"];
     }];
 }
 
@@ -154,8 +166,8 @@ enum State : NSInteger {Began, Changed, Possible, Ended, Canceled, Recognized, F
         [UIView animateWithDuration:0.5 animations:^{
             self.routeButtonView.center = CGPointMake(self.origin.x, self.origin.y-97);
             self.textButtonView.center = CGPointMake(self.origin.x+72, self.origin.y-65);
-            self.routeButtonView.image = [UIImage imageNamed:@"placeholder.gif"];
-            self.textButtonView.image  = [UIImage imageNamed:@"placeholder.gif"];
+            self.routeButtonView.image = [UIImage imageNamed:@"route_button.png"];
+            self.textButtonView.image  = [UIImage imageNamed:@"text_button.png"];
         }];
     }
     else if (button == self.routeButtonView)
@@ -163,8 +175,8 @@ enum State : NSInteger {Began, Changed, Possible, Ended, Canceled, Recognized, F
         [UIView animateWithDuration:0.5 animations:^{
             self.boltButtonView.center = CGPointMake(self.origin.x-72, self.origin.y-65);
             self.textButtonView.center = CGPointMake(self.origin.x+72, self.origin.y-65);
-            self.boltButtonView.image  = [UIImage imageNamed:@"placeholder.gif"];
-            self.textButtonView.image  = [UIImage imageNamed:@"placeholder.gif"];
+            self.boltButtonView.image  = [UIImage imageNamed:@"bolt_button.png"];
+            self.textButtonView.image  = [UIImage imageNamed:@"text_button.png"];
         }];
     }
     else
@@ -172,8 +184,8 @@ enum State : NSInteger {Began, Changed, Possible, Ended, Canceled, Recognized, F
         [UIView animateWithDuration:0.5 animations:^{
             self.boltButtonView.center = CGPointMake(self.origin.x-72, self.origin.y-65);
             self.routeButtonView.center = CGPointMake(self.origin.x, self.origin.y-97);
-            self.boltButtonView.image  = [UIImage imageNamed:@"placeholder.gif"];
-            self.routeButtonView.image = [UIImage imageNamed:@"placeholder.gif"];
+            self.boltButtonView.image  = [UIImage imageNamed:@"bolt_button.png"];
+            self.routeButtonView.image = [UIImage imageNamed:@"route_button.png"];
         }];
     }
 }
@@ -188,6 +200,9 @@ enum State : NSInteger {Began, Changed, Possible, Ended, Canceled, Recognized, F
     [self.view addSubview:self.boltButtonView];
     [self.view addSubview:self.routeButtonView];
     [self.view addSubview:self.textButtonView];
+    [self.view addSubview:self.checkButtonView];
+    
+    self.checkButtonView.alpha = 0.0;
     
     self.boltButtonView.center = self.origin;
     self.routeButtonView.center = self.origin;
@@ -211,10 +226,12 @@ enum State : NSInteger {Began, Changed, Possible, Ended, Canceled, Recognized, F
         self.boltButtonView.center  = self.origin;
         self.routeButtonView.center = self.origin;
         self.textButtonView.center  = self.origin;
+        self.checkButtonView.center = self.origin;
         
         self.boltButtonView.alpha  = 0.0;
         self.routeButtonView.alpha = 0.0;
         self.textButtonView.alpha  = 0.0;
+        self.checkButtonView.alpha = 0.0;
     }];    
 }
 
@@ -282,24 +299,28 @@ enum State : NSInteger {Began, Changed, Possible, Ended, Canceled, Recognized, F
     [UIView animateWithDuration:0.5 animations:^{
         if (self.closestButtonType==bolt)
         {
-            button.image = [UIImage imageNamed:@"bolt_button.gif"];
+            button.image = [UIImage imageNamed:@"bolt_button_hl.png"];
         }
         else if (self.closestButtonType==route)
         {
-            button.image = [UIImage imageNamed:@"route_button.gif"];
+            button.image = [UIImage imageNamed:@"route_button_hl.png"];
         }
         else if (self.closestButtonType==text)
         {
-            button.image = [UIImage imageNamed:@"text_button.gif"];
+            button.image = [UIImage imageNamed:@"text_button_hl.png"];
         }
     }];
 }
 
 - (void) chooseButton:(UIImageView *)button
 {
+    self.checkButtonView.frame = button.frame;
+    
     [UIView animateWithDuration:0.5 animations:^{
-        button.backgroundColor = [UIColor blackColor];
+        button.alpha = 0.0;
+        self.checkButtonView.alpha = 1.0;
     }];
+    
     [self performSelector:@selector(hideMenu) withObject:nil afterDelay:0.5];
 }
 
