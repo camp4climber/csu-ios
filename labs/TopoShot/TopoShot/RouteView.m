@@ -9,6 +9,8 @@
 #import "RouteView.h"
 #import <QuartzCore/QuartzCore.h>
 
+#define MIN_DISTANCE 20
+
 @implementation RouteView
 {
     UIBezierPath *path;
@@ -100,11 +102,6 @@
     [path stroke];
     incrementalImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-}
-
-+(Class)layerClass
-{
-    return [CALayer class];
 }
 
 @end

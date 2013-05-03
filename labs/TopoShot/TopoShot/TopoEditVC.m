@@ -11,6 +11,7 @@
 #import "UIView+findFirstResponder.h"
 #import "TestDraw.h"
 #import "InfoEditVC.h"
+#import "EditMenuGR.h"
 
 @interface TopoEditVC () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 
@@ -47,6 +48,11 @@
     self.route.routeView.zoom = self.routeScrollView.zoomScale;
     
     [self reset];
+    
+    EditMenuGR *editMenuRecognizer      = [[EditMenuGR alloc] initWithTarget:self action:@selector(changeToolMenu:)];
+    editMenuRecognizer.numberOfTouchesRequired = 1;
+    editMenuRecognizer.minimumPressDuration = 0.5;
+    [self.routeScrollView addGestureRecognizer:editMenuRecognizer];
     
     UITapGestureRecognizer *addBoltRecognizer    = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addBolt:)];
     addBoltRecognizer.numberOfTapsRequired       = 1;
@@ -207,26 +213,6 @@
 	[recognizer setTranslation:CGPointZero inView:view];
 }
 
-- (IBAction)changeTool:(UISegmentedControl *)sender
-{
-    switch (sender.selectedSegmentIndex)
-    {
-        case 0:
-            self.routeScrollView.scrollEnabled = YES;
-            [self.containerView bringSubviewToFront:self.route.boltView];
-            break;
-        case 1:
-            self.routeScrollView.scrollEnabled = NO;
-            [self.routeScrollView delaysContentTouches];
-            [self.containerView bringSubviewToFront:self.route.routeView];
-            break;
-        case 2:
-            self.routeScrollView.scrollEnabled = YES;
-            [self.containerView bringSubviewToFront:self.route.descView];
-            break;
-    }
-}
-
 - (void) scrollViewDidZoom:(UIScrollView *)scrollView
 {
     self.route.routeView.zoom = scrollView.zoomScale;
@@ -236,6 +222,30 @@
 {
     InfoEditVC *vc = segue.destinationViewController;
     vc.route = self.route;
+}
+
+- (void) changeToolMenu: (EditMenuGR *) recognizer
+{
+    if (recognizer.chosenButtonType == bolt)
+    {
+        self.routeScrollView.scrollEnabled = YES;
+        [self.containerView bringSubviewToFront:self.route.boltView];
+    }
+    else if (recognizer.chosenButtonType == route)
+    {
+        self.routeScrollView.scrollEnabled = NO;
+        [self.routeScrollView delaysContentTouches];
+        [self.containerView bringSubviewToFront:self.route.routeView];
+    }
+    else if (recognizer.chosenButtonType == text)
+    {
+        self.routeScrollView.scrollEnabled = YES;
+        [self.containerView bringSubviewToFront:self.route.descView];
+    }
+    else
+    {
+        NSLog(@"None");
+    }
 }
 
 @end

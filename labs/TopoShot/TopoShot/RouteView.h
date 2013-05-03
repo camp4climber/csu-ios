@@ -11,6 +11,5 @@
 @interface RouteView : UIView
 
 @property (nonatomic) CGFloat zoom;
-+(Class)layerClass;
 
 @end

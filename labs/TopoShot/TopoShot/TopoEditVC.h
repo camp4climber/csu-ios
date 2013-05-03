@@ -13,7 +13,4 @@
 
 @property (strong, nonatomic) Route *route;
 @property (weak, nonatomic) IBOutlet UIScrollView *routeScrollView;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *toolBar;
-- (IBAction)changeTool:(UISegmentedControl *)sender;
-
 @end

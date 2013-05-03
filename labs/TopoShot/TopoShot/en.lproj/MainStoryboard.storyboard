@@ -189,7 +189,7 @@
                     <navigationItem key="navigationItem" title="Info" id="Eh8-Nv-ym5">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="nIL-qa-EtM">
                             <connections>
-                                <segue destination="jVd-qu-e08" kind="push" id="Uio-Ij-Hby"/>
+                                <segue destination="jVd-qu-e08" kind="push" id="hcp-wm-ClP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -203,7 +203,7 @@
             </objects>
             <point key="canvasLocation" x="2028" y="508"/>
         </scene>
-        <!--Topo EditVC-->
+        <!--Topo EditVC - Edit Route-->
         <scene sceneID="93l-gk-fAg">
             <objects>
                 <viewController id="Hlt-pe-e66" customClass="TopoEditVC" sceneMemberID="viewController">
@@ -221,20 +221,7 @@
                             <constraint firstItem="6KR-oZ-AQg" firstAttribute="bottom" secondItem="Rxz-Sq-btE" secondAttribute="bottom" type="default" id="yCj-CE-Ly1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="BXM-UJ-Jvw">
-                        <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="AqN-tS-75q">
-                            <rect key="frame" x="56" y="7" width="203" height="31"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="Bolts"/>
-                                <segment title="Route"/>
-                                <segment title="Text"/>
-                            </segments>
-                            <connections>
-                                <action selector="changeTool:" destination="Hlt-pe-e66" eventType="valueChanged" id="L6d-dl-VKj"/>
-                            </connections>
-                        </segmentedControl>
+                    <navigationItem key="navigationItem" title="Edit Route" id="BXM-UJ-Jvw">
                         <barButtonItem key="rightBarButtonItem" title="Info" id="Hsb-Ac-B3Z">
                             <connections>
                                 <segue destination="PHu-Jd-2nn" kind="push" id="Y10-OI-axS"/>
@@ -243,7 +230,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="routeScrollView" destination="6KR-oZ-AQg" id="M2i-Sx-Mb6"/>
-                        <outlet property="toolBar" destination="AqN-tS-75q" id="y6v-Y2-o13"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ak-V7-IIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -304,7 +290,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nwA-Ry-DWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="697" y="1091"/>
+            <point key="canvasLocation" x="745" y="1099"/>
         </scene>
         <!--RouteVC - Route Name-->
         <scene sceneID="qlu-5U-0dD">
@@ -337,7 +323,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xgj-SN-tbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1170" y="1091"/>
+            <point key="canvasLocation" x="1172" y="1091"/>
         </scene>
         <!--View Controller - Route Name - Info-->
         <scene sceneID="x9T-E7-Kx3">
@@ -420,57 +406,12 @@
         <image name="camera.png" width="16" height="16"/>
         <image name="folder-open.png" width="16" height="16"/>
     </resources>
-    <classes>
-        <class className="InfoEditVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoEditVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="difficultyField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="notesField" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="NewRouteVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewRouteVC.h"/>
-            <relationships>
-                <relationship kind="action" name="pickImage:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="routeImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="useImageButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="RouteListTVC" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RouteListTVC.h"/>
-        </class>
-        <class className="RouteTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RouteTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="difficultyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="RouteVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RouteVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="routeScrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="TopoEditVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TopoEditVC.h"/>
-            <relationships>
-                <relationship kind="action" name="changeTool:" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="routeScrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="toolBar" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Uio-Ij-Hby"/>
+        <segue reference="hcp-wm-ClP"/>
     </inferredMetricsTieBreakers>
 </document>

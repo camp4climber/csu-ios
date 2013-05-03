@@ -32,6 +32,11 @@
 		43A35C5B1706B2470078F395 /* TopoEditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A35C5A1706B2470078F395 /* TopoEditVC.m */; };
 		43A35C5E170771A50078F395 /* RouteList.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A35C5D170771A50078F395 /* RouteList.m */; };
 		43AB317B1716081500F3C69C /* RouteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AB317A1716081400F3C69C /* RouteView.m */; };
+		43BD5D48173246C100031AC3 /* EditMenuGR.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BD5D47173246C100031AC3 /* EditMenuGR.m */; };
+		43BD5D4C1732CF3600031AC3 /* bolt_button.gif in Resources */ = {isa = PBXBuildFile; fileRef = 43BD5D491732CF3600031AC3 /* bolt_button.gif */; };
+		43BD5D4D1732CF3600031AC3 /* route_button.gif in Resources */ = {isa = PBXBuildFile; fileRef = 43BD5D4A1732CF3600031AC3 /* route_button.gif */; };
+		43BD5D4E1732CF3600031AC3 /* text_button.gif in Resources */ = {isa = PBXBuildFile; fileRef = 43BD5D4B1732CF3600031AC3 /* text_button.gif */; };
+		43BD5D501732E99800031AC3 /* placeholder.gif in Resources */ = {isa = PBXBuildFile; fileRef = 43BD5D4F1732E99800031AC3 /* placeholder.gif */; };
 		43E44028171CACC400516B44 /* UIView+findFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E44027171CACC400516B44 /* UIView+findFirstResponder.m */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +80,12 @@
 		43A35C5D170771A50078F395 /* RouteList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteList.m; sourceTree = "<group>"; };
 		43AB31791716081400F3C69C /* RouteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteView.h; sourceTree = "<group>"; };
 		43AB317A1716081400F3C69C /* RouteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteView.m; sourceTree = "<group>"; };
+		43BD5D46173246C100031AC3 /* EditMenuGR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMenuGR.h; sourceTree = "<group>"; };
+		43BD5D47173246C100031AC3 /* EditMenuGR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMenuGR.m; sourceTree = "<group>"; };
+		43BD5D491732CF3600031AC3 /* bolt_button.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bolt_button.gif; sourceTree = "<group>"; };
+		43BD5D4A1732CF3600031AC3 /* route_button.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = route_button.gif; sourceTree = "<group>"; };
+		43BD5D4B1732CF3600031AC3 /* text_button.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = text_button.gif; sourceTree = "<group>"; };
+		43BD5D4F1732E99800031AC3 /* placeholder.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = placeholder.gif; sourceTree = "<group>"; };
 		43E44026171CACC400516B44 /* UIView+findFirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+findFirstResponder.h"; sourceTree = "<group>"; };
 		43E44027171CACC400516B44 /* UIView+findFirstResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+findFirstResponder.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,6 +125,8 @@
 				4315137F17285B3E005FB524 /* TestDraw.m */,
 				431513811728C8BD005FB524 /* RouteTableViewCell.h */,
 				431513821728C8BD005FB524 /* RouteTableViewCell.m */,
+				43BD5D46173246C100031AC3 /* EditMenuGR.h */,
+				43BD5D47173246C100031AC3 /* EditMenuGR.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -166,6 +179,10 @@
 		438B77D216EC5CD100022B35 /* TopoShot */ = {
 			isa = PBXGroup;
 			children = (
+				43BD5D4F1732E99800031AC3 /* placeholder.gif */,
+				43BD5D491732CF3600031AC3 /* bolt_button.gif */,
+				43BD5D4A1732CF3600031AC3 /* route_button.gif */,
+				43BD5D4B1732CF3600031AC3 /* text_button.gif */,
 				4375ADCE16FF793E002DEE62 /* controllers */,
 				4375ADCD16FF7936002DEE62 /* views */,
 				4375ADCC16FF792E002DEE62 /* models */,
@@ -258,6 +275,10 @@
 				43A35C58170680000078F395 /* folder-open.png in Resources */,
 				4388EBCD170E6BE60033D799 /* camera@2x.png in Resources */,
 				4388EBCE170E6BE60033D799 /* folder-open@2x.png in Resources */,
+				43BD5D4C1732CF3600031AC3 /* bolt_button.gif in Resources */,
+				43BD5D4D1732CF3600031AC3 /* route_button.gif in Resources */,
+				43BD5D4E1732CF3600031AC3 /* text_button.gif in Resources */,
+				43BD5D501732E99800031AC3 /* placeholder.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +302,7 @@
 				431513831728C8BD005FB524 /* RouteTableViewCell.m in Sources */,
 				431513861728CD91005FB524 /* InfoEditVC.m in Sources */,
 				4379B5EC1729076C0069133B /* RouteVC.m in Sources */,
+				43BD5D48173246C100031AC3 /* EditMenuGR.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
