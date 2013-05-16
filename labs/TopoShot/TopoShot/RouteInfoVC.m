@@ -7,6 +7,7 @@
 //
 
 #import "RouteInfoVC.h"
+#import "TopoEditVC.h"
 
 @interface RouteInfoVC ()
 
@@ -21,6 +22,13 @@
     self.nameLabel.text = self.route.name;
     self.difficultyLabel.text = self.route.difficulty;
     self.notesTextView.text = self.route.notes;
+    self.title = [NSString stringWithFormat:@"%@ - Info", self.route.name];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    TopoEditVC *vc = segue.destinationViewController;
+    vc.route = self.route;
 }
 
 @end

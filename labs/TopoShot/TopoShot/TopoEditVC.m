@@ -52,7 +52,7 @@
     [self.containerView   addSubview:self.route.boltView];
 
     self.routeScrollView.minimumZoomScale = 0.1;
-    self.routeScrollView.maximumZoomScale = 1.0;
+    self.routeScrollView.maximumZoomScale = 1.5;
     self.routeScrollView.delegate         = self;
     
     [self.route.routeView setUserInteractionEnabled:YES];
@@ -83,7 +83,6 @@
     UITapGestureRecognizer *addAnchorRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addAnchor:)];
     addAnchorRecognizer.numberOfTouchesRequired = 2;
     addAnchorRecognizer.numberOfTapsRequired    = 1;
-    [addAnchorRecognizer requireGestureRecognizerToFail:doubleTapDependency];
     [self.route.boltView addGestureRecognizer:addAnchorRecognizer];
     
     UITapGestureRecognizer *addTextRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addText:)];
@@ -119,7 +118,7 @@
         self.route.routeView.backgroundColor = [UIColor clearColor];
         
         [self.routeScrollView setContentSize:CGSizeMake(self.containerView.frame.size.width, self.containerView.frame.size.height)];
-        self.routeScrollView.zoomScale = 0.2;
+        self.routeScrollView.zoomScale = 1.0;
     }
 }
 
@@ -137,11 +136,11 @@
     
     if (factoredX < self.route.boltView.frame.size.width && factoredY < self.route.boltView.frame.size.height)
     {
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(factoredX-75, factoredY-75, 150, 150)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(factoredX-15, factoredY-15, 30, 30)];
         label.text = @"x";
         [label setTextColor:[UIColor whiteColor]];
         [label setBackgroundColor:[UIColor clearColor]];
-        label.font = [UIFont fontWithName:@"helvetica" size:150];
+        label.font = [UIFont fontWithName:@"helvetica" size:30];
         label.textAlignment = NSTextAlignmentCenter;
         label.userInteractionEnabled = YES;
         
@@ -171,7 +170,7 @@
         label.text = @"x x";
         [label setTextColor:[UIColor whiteColor]];
         [label setBackgroundColor:[UIColor clearColor]];
-        label.font = [UIFont fontWithName:@"helvetica" size:150];
+        label.font = [UIFont fontWithName:@"helvetica" size:50];
         label.textAlignment = NSTextAlignmentCenter;
         label.userInteractionEnabled = YES;
         
@@ -203,16 +202,20 @@
     }
     else if (factoredX < self.route.descView.frame.size.width && factoredY < self.route.descView.frame.size.height)
     {
-        UITextView *text = [[UITextView alloc] initWithFrame:CGRectMake(factoredX, factoredY, 600, 300)];
+        UITextView *text = [[UITextView alloc] initWithFrame:CGRectMake(factoredX, factoredY, 150, 75)];
         [text setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.5]];
         [text setTextColor:[UIColor whiteColor]];
         text.editable = YES;
-        text.font = [UIFont fontWithName:@"helvetica" size:50];
+        text.font = [UIFont fontWithName:@"helvetica" size:10];
         
         [self.route.descView addSubview:text];
         
         UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
         [text addGestureRecognizer:panRecognizer];
+        
+        UIPanGestureRecognizer *resizeRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(resize:)];
+        resizeRecognizer.minimumNumberOfTouches = 2;
+        [text addGestureRecognizer:resizeRecognizer];
         
         UITapGestureRecognizer *removeItemRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeItem:)];
         removeItemRecognizer.numberOfTouchesRequired = 1;
@@ -237,6 +240,16 @@
                                view.center.y + translation.y);
     
 	[recognizer setTranslation:CGPointZero inView:view];
+}
+
+- (void) resize:(UIPanGestureRecognizer *)recognizer
+{
+    NSLog(@"resize");
+    
+    UIView *view = recognizer.view;
+    CGPoint translation = [recognizer translationInView:view];
+    view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y, view.frame.size.width + translation.x, view.frame.size.height + translation.y);
+    [recognizer setTranslation:CGPointZero inView:view];
 }
 
 - (void) scrollViewDidZoom:(UIScrollView *)scrollView
