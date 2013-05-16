@@ -25,7 +25,7 @@
 - (IBAction)pickImage:(UIBarButtonItem *)sender
 {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
+    picker.delegate                 = self;
     switch (sender.tag)
     {
         case 1:
@@ -40,8 +40,8 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    TopoEditVC *vc = segue.destinationViewController;
-    vc.route = [[Route alloc] init];
+    TopoEditVC *vc     = segue.destinationViewController;
+    vc.route           = [[Route alloc] init];
     vc.route.baseImage = self.routeImageView.image;
     [[RouteList sharedRouteList] addRoute:vc.route];
 }
@@ -49,7 +49,7 @@
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     self.useImageButton.hidden = NO;
-    self.routeImageView.image = [info valueForKey:@"UIImagePickerControllerOriginalImage"];
+    self.routeImageView.image  = [info valueForKey:@"UIImagePickerControllerOriginalImage"];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

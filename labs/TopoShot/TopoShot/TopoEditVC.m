@@ -9,17 +9,28 @@
 #import "TopoEditVC.h"
 #import "RouteView.h"
 #import "UIView+findFirstResponder.h"
-#import "TestDraw.h"
 #import "InfoEditVC.h"
 #import "EditMenuGR.h"
+#import "HelpVC.h"
 
 @interface TopoEditVC () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UIView *containerView;
+@property (nonatomic, strong) HelpVC *helpViewController;
+@property (nonatomic) ButtonType currentTool;
 
 @end
 
 @implementation TopoEditVC
+
+- (HelpVC *) helpViewController
+{
+    if (!_helpViewController)
+    {
+        _helpViewController = [[HelpVC alloc] init];
+    }
+    return _helpViewController;
+}
 
 - (UIView *) containerView
 {
@@ -49,26 +60,41 @@
     
     [self reset];
     
-    EditMenuGR *editMenuRecognizer      = [[EditMenuGR alloc] initWithTarget:self action:@selector(changeToolMenu:)];
+    self.currentTool = bolt;
+    [self.currentToolImageView setUserInteractionEnabled:YES];
+    
+    UITapGestureRecognizer *doubleTapDependency = [[UITapGestureRecognizer alloc] initWithTarget:self action:nil];
+    doubleTapDependency.numberOfTapsRequired = 2;
+    doubleTapDependency.numberOfTouchesRequired = 1;
+    [self.routeScrollView addGestureRecognizer:doubleTapDependency];
+    
+    EditMenuGR *editMenuRecognizer = [[EditMenuGR alloc] initWithTarget:self action:@selector(changeToolMenu:)];
     editMenuRecognizer.numberOfTouchesRequired = 1;
-    editMenuRecognizer.minimumPressDuration = 0.5;
+    editMenuRecognizer.minimumPressDuration    = 0.5;
+    [editMenuRecognizer requireGestureRecognizerToFail:doubleTapDependency];
     [self.routeScrollView addGestureRecognizer:editMenuRecognizer];
     
-    UITapGestureRecognizer *addBoltRecognizer    = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addBolt:)];
-    addBoltRecognizer.numberOfTapsRequired       = 1;
-    addBoltRecognizer.numberOfTouchesRequired    = 1;
+    UITapGestureRecognizer *addBoltRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addBolt:)];
+    addBoltRecognizer.numberOfTapsRequired    = 1;
+    addBoltRecognizer.numberOfTouchesRequired = 1;
+    [addBoltRecognizer requireGestureRecognizerToFail:doubleTapDependency];
     [self.route.boltView addGestureRecognizer:addBoltRecognizer];
     
-    UITapGestureRecognizer *addAnchorRecognizer  = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addAnchor:)];
-    addAnchorRecognizer.numberOfTouchesRequired  = 2;
-    addAnchorRecognizer.numberOfTapsRequired     = 1;
+    UITapGestureRecognizer *addAnchorRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addAnchor:)];
+    addAnchorRecognizer.numberOfTouchesRequired = 2;
+    addAnchorRecognizer.numberOfTapsRequired    = 1;
+    [addAnchorRecognizer requireGestureRecognizerToFail:doubleTapDependency];
     [self.route.boltView addGestureRecognizer:addAnchorRecognizer];
     
-    UITapGestureRecognizer *addTextRecognizer    = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addText:)];
-    addTextRecognizer.numberOfTouchesRequired    = 1;
-    addTextRecognizer.numberOfTapsRequired       = 1;
+    UITapGestureRecognizer *addTextRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addText:)];
+    addTextRecognizer.numberOfTouchesRequired = 1;
+    addTextRecognizer.numberOfTapsRequired    = 1;
     [self.route.descView addGestureRecognizer:addTextRecognizer];
     
+    UITapGestureRecognizer *helpRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(revealHelp:)];
+    helpRecognizer.numberOfTapsRequired    = 1;
+    helpRecognizer.numberOfTouchesRequired = 1;
+    [self.currentToolImageView addGestureRecognizer:helpRecognizer];
 }
 
 - (void) reset
@@ -226,22 +252,53 @@
 
 - (void) changeToolMenu: (EditMenuGR *) recognizer
 {
-    if (recognizer.chosenButtonType == bolt)
+    switch (recognizer.chosenButtonType)
     {
-        self.routeScrollView.scrollEnabled = YES;
-        [self.containerView bringSubviewToFront:self.route.boltView];
+        case bolt:
+            self.currentTool                   = bolt;
+            self.currentToolImageView.image    = [UIImage imageNamed:@"bolt_button_help.png"];
+            self.routeScrollView.scrollEnabled = YES;
+            [self.containerView bringSubviewToFront:self.route.boltView];
+            break;
+        case route:
+            self.currentTool                   = route;
+            self.currentToolImageView.image    = [UIImage imageNamed:@"route_button_help.png"];
+            self.routeScrollView.scrollEnabled = NO;
+            [self.routeScrollView delaysContentTouches];
+            [self.containerView bringSubviewToFront:self.route.routeView];
+            break;
+        case text:
+            self.currentTool                   = text;
+            self.currentToolImageView.image    = [UIImage imageNamed:@"text_button_help.png"];
+            self.routeScrollView.scrollEnabled = YES;
+            [self.containerView bringSubviewToFront:self.route.descView];
+            break;
+        case none:
+            break;
     }
-    else if (recognizer.chosenButtonType == route)
+}
+
+- (void) revealHelp:(UITapGestureRecognizer *)recognizer
+{
+    NSLog(@"reveal help");
+    
+    switch (self.currentTool)
     {
-        self.routeScrollView.scrollEnabled = NO;
-        [self.routeScrollView delaysContentTouches];
-        [self.containerView bringSubviewToFront:self.route.routeView];
+        case bolt:
+            [self.helpViewController setHelpView:bolt];
+            break;
+        case route:
+            [self.helpViewController setHelpView:route];
+            break;
+        case text:
+            [self.helpViewController setHelpView:text];
+            break;
+        case none:
+            break;
     }
-    else if (recognizer.chosenButtonType == text)
-    {
-        self.routeScrollView.scrollEnabled = YES;
-        [self.containerView bringSubviewToFront:self.route.descView];
-    }
+    
+    self.helpViewController.modalTransitionStyle = UIModalTransitionStylePartialCurl;
+    [self presentViewController:self.helpViewController animated:YES completion:^{}];
 }
 
 @end

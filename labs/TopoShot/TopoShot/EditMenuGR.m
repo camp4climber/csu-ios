@@ -30,7 +30,7 @@ enum State : NSInteger {Began, Changed, Possible, Ended, Canceled, Recognized, F
     if (!_boltButtonView)
     {
         UIImage *boltImage = [UIImage imageNamed:@"bolt_button.png"];
-        _boltButtonView = [[UIImageView alloc] initWithImage:boltImage];
+        _boltButtonView    = [[UIImageView alloc] initWithImage:boltImage];
     }
     return _boltButtonView;
 }
@@ -40,7 +40,7 @@ enum State : NSInteger {Began, Changed, Possible, Ended, Canceled, Recognized, F
     if (!_routeButtonView)
     {
         UIImage *routeImage = [UIImage imageNamed:@"route_button.png"];
-        _routeButtonView = [[UIImageView alloc] initWithImage:routeImage];
+        _routeButtonView    = [[UIImageView alloc] initWithImage:routeImage];
     }
     return _routeButtonView;
 }
@@ -50,7 +50,7 @@ enum State : NSInteger {Began, Changed, Possible, Ended, Canceled, Recognized, F
     if (!_textButtonView)
     {
         UIImage *textImage = [UIImage imageNamed:@"text_button.png"];
-        _textButtonView = [[UIImageView alloc] initWithImage:textImage];
+        _textButtonView    = [[UIImageView alloc] initWithImage:textImage];
     }
     return _textButtonView;
 }
@@ -60,7 +60,7 @@ enum State : NSInteger {Began, Changed, Possible, Ended, Canceled, Recognized, F
     if (!_checkButtonView)
     {
         UIImage *checkImage = [UIImage imageNamed:@"checkmark_button.png"];
-        _checkButtonView = [[UIImageView alloc] initWithImage:checkImage];
+        _checkButtonView    = [[UIImageView alloc] initWithImage:checkImage];
     }
     return _checkButtonView;
 }
@@ -68,27 +68,23 @@ enum State : NSInteger {Began, Changed, Possible, Ended, Canceled, Recognized, F
 - (void) touchesBegan: (NSSet *)touches withEvent:(UIEvent *)event
 {
     //long press
-    UITouch *t = [touches anyObject];
-    CGPoint pt = [t locationInView:self.view];
+    UITouch *t  = [touches anyObject];
+    CGPoint pt  = [t locationInView:self.view];
     
     self.origin = pt;
     
-    self.state = Began;
+    self.state  = Began;
     
     NSTimeInterval duration = 0.5;
     [self performSelector:@selector(showMenu)
                withObject:nil
-               afterDelay:duration];    
+               afterDelay:duration];
 }
 
 - (void) touchesMoved: (NSSet *) touches withEvent:(UIEvent *)event
 {
     //testing this. assume that touch moves before showMenu is called
-    if (self.state == Canceled)
-    {
-        [NSObject cancelPreviousPerformRequestsWithTarget:self];
-    }
-    else
+    if (self.state == Possible)
     {
         UITouch *t = [touches anyObject];
         CGPoint pt = [t locationInView:self.view];
@@ -115,6 +111,10 @@ enum State : NSInteger {Began, Changed, Possible, Ended, Canceled, Recognized, F
             [self reset];
             self.state = Changed;
         }
+    }
+    else
+    {
+        [NSObject cancelPreviousPerformRequestsWithTarget:self];
     }
 }
 
@@ -165,9 +165,9 @@ enum State : NSInteger {Began, Changed, Possible, Ended, Canceled, Recognized, F
     {
         [UIView animateWithDuration:0.5 animations:^{
             self.routeButtonView.center = CGPointMake(self.origin.x, self.origin.y-97);
-            self.textButtonView.center = CGPointMake(self.origin.x+72, self.origin.y-65);
-            self.routeButtonView.image = [UIImage imageNamed:@"route_button.png"];
-            self.textButtonView.image  = [UIImage imageNamed:@"text_button.png"];
+            self.textButtonView.center  = CGPointMake(self.origin.x+72, self.origin.y-65);
+            self.routeButtonView.image  = [UIImage imageNamed:@"route_button.png"];
+            self.textButtonView.image   = [UIImage imageNamed:@"text_button.png"];
         }];
     }
     else if (button == self.routeButtonView)
@@ -182,10 +182,10 @@ enum State : NSInteger {Began, Changed, Possible, Ended, Canceled, Recognized, F
     else
     {
         [UIView animateWithDuration:0.5 animations:^{
-            self.boltButtonView.center = CGPointMake(self.origin.x-72, self.origin.y-65);
+            self.boltButtonView.center  = CGPointMake(self.origin.x-72, self.origin.y-65);
             self.routeButtonView.center = CGPointMake(self.origin.x, self.origin.y-97);
-            self.boltButtonView.image  = [UIImage imageNamed:@"bolt_button.png"];
-            self.routeButtonView.image = [UIImage imageNamed:@"route_button.png"];
+            self.boltButtonView.image   = [UIImage imageNamed:@"bolt_button.png"];
+            self.routeButtonView.image  = [UIImage imageNamed:@"route_button.png"];
         }];
     }
 }
@@ -193,9 +193,9 @@ enum State : NSInteger {Began, Changed, Possible, Ended, Canceled, Recognized, F
 - (void) showMenu
 {    
     //pythagorean triple
-    CGPoint boltButtonLocation = CGPointMake(self.origin.x-72, self.origin.y-65);
+    CGPoint boltButtonLocation  = CGPointMake(self.origin.x-72, self.origin.y-65);
     CGPoint routeButtonLocation = CGPointMake(self.origin.x, self.origin.y-97);
-    CGPoint textButtonLocation = CGPointMake(self.origin.x+72, self.origin.y-65);
+    CGPoint textButtonLocation  = CGPointMake(self.origin.x+72, self.origin.y-65);
         
     [self.view addSubview:self.boltButtonView];
     [self.view addSubview:self.routeButtonView];
@@ -204,20 +204,21 @@ enum State : NSInteger {Began, Changed, Possible, Ended, Canceled, Recognized, F
     
     self.checkButtonView.alpha = 0.0;
     
-    self.boltButtonView.center = self.origin;
+    self.boltButtonView.center  = self.origin;
     self.routeButtonView.center = self.origin;
-    self.textButtonView.center = self.origin;
+    self.textButtonView.center  = self.origin;
     
     // begin button animation
     [UIView animateWithDuration:0.5 animations:^{
-        self.boltButtonView.center = boltButtonLocation;
+        self.boltButtonView.center  = boltButtonLocation;
         self.routeButtonView.center = routeButtonLocation;
-        self.textButtonView.center = textButtonLocation;
+        self.textButtonView.center  = textButtonLocation;
         
         self.boltButtonView.alpha  = 1.0;
         self.routeButtonView.alpha = 1.0;
         self.textButtonView.alpha  = 1.0;
     }];
+    self.state = Possible;
 }
 
 - (void) hideMenu

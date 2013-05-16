@@ -12,5 +12,6 @@
 @interface TopoEditVC : UIViewController
 
 @property (strong, nonatomic) Route *route;
+@property (weak, nonatomic) IBOutlet UIImageView *currentToolImageView;
 @property (weak, nonatomic) IBOutlet UIScrollView *routeScrollView;
 @end

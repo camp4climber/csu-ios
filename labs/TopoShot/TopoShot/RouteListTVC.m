@@ -56,11 +56,11 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    RouteVC *vc = segue.destinationViewController;
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-    Route *route = [[[RouteList sharedRouteList] allRoutes] objectAtIndex:indexPath.row];
-    
-    vc.route = route;
+//    RouteVC *vc = segue.destinationViewController;
+//    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+//    Route *route = [[[RouteList sharedRouteList] allRoutes] objectAtIndex:indexPath.row];
+//    
+//    vc.route = route;
 }
 
 @end

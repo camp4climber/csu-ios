@@ -7,6 +7,7 @@
 //
 
 #import "RouteVC.h"
+#import "RouteInfoVC.h"
 
 @interface RouteVC () <UIScrollViewDelegate>
 
@@ -83,7 +84,8 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-
+    RouteInfoVC *vc = segue.destinationViewController;
+    vc.route = self.route;
 }
 
 

@@ -14,7 +14,6 @@
 		431204D217345A2A008B8F8F /* route_button_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = 431204D017345A2A008B8F8F /* route_button_hl.png */; };
 		431204D317345A2A008B8F8F /* route_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 431204D117345A2A008B8F8F /* route_button.png */; };
 		431204D517345D30008B8F8F /* checkmark_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 431204D417345D30008B8F8F /* checkmark_button.png */; };
-		4315138017285B3E005FB524 /* TestDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 4315137F17285B3E005FB524 /* TestDraw.m */; };
 		431513831728C8BD005FB524 /* RouteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 431513821728C8BD005FB524 /* RouteTableViewCell.m */; };
 		431513861728CD91005FB524 /* InfoEditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 431513851728CD91005FB524 /* InfoEditVC.m */; };
 		4349EDB81724E89000469454 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4349EDB71724E89000469454 /* QuartzCore.framework */; };
@@ -39,8 +38,19 @@
 		43A35C5B1706B2470078F395 /* TopoEditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A35C5A1706B2470078F395 /* TopoEditVC.m */; };
 		43A35C5E170771A50078F395 /* RouteList.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A35C5D170771A50078F395 /* RouteList.m */; };
 		43AB317B1716081500F3C69C /* RouteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AB317A1716081400F3C69C /* RouteView.m */; };
+		43AFB90A17441E4F008AFE62 /* bolt_button_help.png in Resources */ = {isa = PBXBuildFile; fileRef = 43AFB90717441E4E008AFE62 /* bolt_button_help.png */; };
+		43AFB90B17441E4F008AFE62 /* route_button_help.png in Resources */ = {isa = PBXBuildFile; fileRef = 43AFB90817441E4E008AFE62 /* route_button_help.png */; };
+		43AFB90C17441E4F008AFE62 /* text_button_help.png in Resources */ = {isa = PBXBuildFile; fileRef = 43AFB90917441E4F008AFE62 /* text_button_help.png */; };
+		43AFB90F174424AD008AFE62 /* RouteInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AFB90E174424AD008AFE62 /* RouteInfoVC.m */; };
 		43BD5D48173246C100031AC3 /* EditMenuGR.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BD5D47173246C100031AC3 /* EditMenuGR.m */; };
+		43C1D17217384A5A005D170A /* steepfaceicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 43C1D17117384A5A005D170A /* steepfaceicon.png */; };
+		43C1D17417384A5F005D170A /* steepfaceicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43C1D17317384A5F005D170A /* steepfaceicon@2x.png */; };
 		43E44028171CACC400516B44 /* UIView+findFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E44027171CACC400516B44 /* UIView+findFirstResponder.m */; };
+		43F7FAA817359CD700A4E185 /* BoltHelpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F7FAA717359CD700A4E185 /* BoltHelpView.m */; };
+		43F7FAAB17359CE200A4E185 /* RouteHelpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F7FAAA17359CE200A4E185 /* RouteHelpView.m */; };
+		43F7FAAE17359CED00A4E185 /* TextHelpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F7FAAD17359CED00A4E185 /* TextHelpView.m */; };
+		43F7FAB117359D0300A4E185 /* HelpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F7FAB017359D0300A4E185 /* HelpVC.m */; };
+		43F7FAB41735D20E00A4E185 /* HelpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F7FAB31735D20E00A4E185 /* HelpView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,8 +61,6 @@
 		431204D017345A2A008B8F8F /* route_button_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = route_button_hl.png; sourceTree = "<group>"; };
 		431204D117345A2A008B8F8F /* route_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = route_button.png; sourceTree = "<group>"; };
 		431204D417345D30008B8F8F /* checkmark_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark_button.png; sourceTree = "<group>"; };
-		4315137E17285B3E005FB524 /* TestDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDraw.h; sourceTree = "<group>"; };
-		4315137F17285B3E005FB524 /* TestDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDraw.m; sourceTree = "<group>"; };
 		431513811728C8BD005FB524 /* RouteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteTableViewCell.h; sourceTree = "<group>"; };
 		431513821728C8BD005FB524 /* RouteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteTableViewCell.m; sourceTree = "<group>"; };
 		431513841728CD91005FB524 /* InfoEditVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoEditVC.h; sourceTree = "<group>"; };
@@ -90,10 +98,27 @@
 		43A35C5D170771A50078F395 /* RouteList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteList.m; sourceTree = "<group>"; };
 		43AB31791716081400F3C69C /* RouteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteView.h; sourceTree = "<group>"; };
 		43AB317A1716081400F3C69C /* RouteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteView.m; sourceTree = "<group>"; };
+		43AFB90717441E4E008AFE62 /* bolt_button_help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bolt_button_help.png; sourceTree = "<group>"; };
+		43AFB90817441E4E008AFE62 /* route_button_help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = route_button_help.png; sourceTree = "<group>"; };
+		43AFB90917441E4F008AFE62 /* text_button_help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text_button_help.png; sourceTree = "<group>"; };
+		43AFB90D174424AD008AFE62 /* RouteInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteInfoVC.h; sourceTree = "<group>"; };
+		43AFB90E174424AD008AFE62 /* RouteInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteInfoVC.m; sourceTree = "<group>"; };
 		43BD5D46173246C100031AC3 /* EditMenuGR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMenuGR.h; sourceTree = "<group>"; };
 		43BD5D47173246C100031AC3 /* EditMenuGR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMenuGR.m; sourceTree = "<group>"; };
+		43C1D17117384A5A005D170A /* steepfaceicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = steepfaceicon.png; path = ../steepfaceicon.png; sourceTree = "<group>"; };
+		43C1D17317384A5F005D170A /* steepfaceicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "steepfaceicon@2x.png"; path = "../steepfaceicon@2x.png"; sourceTree = "<group>"; };
 		43E44026171CACC400516B44 /* UIView+findFirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+findFirstResponder.h"; sourceTree = "<group>"; };
 		43E44027171CACC400516B44 /* UIView+findFirstResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+findFirstResponder.m"; sourceTree = "<group>"; };
+		43F7FAA617359CD700A4E185 /* BoltHelpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoltHelpView.h; sourceTree = "<group>"; };
+		43F7FAA717359CD700A4E185 /* BoltHelpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoltHelpView.m; sourceTree = "<group>"; };
+		43F7FAA917359CE200A4E185 /* RouteHelpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteHelpView.h; sourceTree = "<group>"; };
+		43F7FAAA17359CE200A4E185 /* RouteHelpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteHelpView.m; sourceTree = "<group>"; };
+		43F7FAAC17359CED00A4E185 /* TextHelpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextHelpView.h; sourceTree = "<group>"; };
+		43F7FAAD17359CED00A4E185 /* TextHelpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextHelpView.m; sourceTree = "<group>"; };
+		43F7FAAF17359D0300A4E185 /* HelpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpVC.h; sourceTree = "<group>"; };
+		43F7FAB017359D0300A4E185 /* HelpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpVC.m; sourceTree = "<group>"; };
+		43F7FAB21735D20D00A4E185 /* HelpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpView.h; sourceTree = "<group>"; };
+		43F7FAB31735D20E00A4E185 /* HelpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,12 +152,18 @@
 			children = (
 				43AB31791716081400F3C69C /* RouteView.h */,
 				43AB317A1716081400F3C69C /* RouteView.m */,
-				4315137E17285B3E005FB524 /* TestDraw.h */,
-				4315137F17285B3E005FB524 /* TestDraw.m */,
 				431513811728C8BD005FB524 /* RouteTableViewCell.h */,
 				431513821728C8BD005FB524 /* RouteTableViewCell.m */,
 				43BD5D46173246C100031AC3 /* EditMenuGR.h */,
 				43BD5D47173246C100031AC3 /* EditMenuGR.m */,
+				43F7FAA617359CD700A4E185 /* BoltHelpView.h */,
+				43F7FAA717359CD700A4E185 /* BoltHelpView.m */,
+				43F7FAA917359CE200A4E185 /* RouteHelpView.h */,
+				43F7FAAA17359CE200A4E185 /* RouteHelpView.m */,
+				43F7FAAC17359CED00A4E185 /* TextHelpView.h */,
+				43F7FAAD17359CED00A4E185 /* TextHelpView.m */,
+				43F7FAB21735D20D00A4E185 /* HelpView.h */,
+				43F7FAB31735D20E00A4E185 /* HelpView.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -150,6 +181,10 @@
 				431513851728CD91005FB524 /* InfoEditVC.m */,
 				4379B5EA1729076C0069133B /* RouteVC.h */,
 				4379B5EB1729076C0069133B /* RouteVC.m */,
+				43F7FAAF17359D0300A4E185 /* HelpVC.h */,
+				43F7FAB017359D0300A4E185 /* HelpVC.m */,
+				43AFB90D174424AD008AFE62 /* RouteInfoVC.h */,
+				43AFB90E174424AD008AFE62 /* RouteInfoVC.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -185,6 +220,11 @@
 		438B77D216EC5CD100022B35 /* TopoShot */ = {
 			isa = PBXGroup;
 			children = (
+				43AFB90717441E4E008AFE62 /* bolt_button_help.png */,
+				43AFB90817441E4E008AFE62 /* route_button_help.png */,
+				43AFB90917441E4F008AFE62 /* text_button_help.png */,
+				43C1D17317384A5F005D170A /* steepfaceicon@2x.png */,
+				43C1D17117384A5A005D170A /* steepfaceicon.png */,
 				431204D417345D30008B8F8F /* checkmark_button.png */,
 				431204D017345A2A008B8F8F /* route_button_hl.png */,
 				431204D117345A2A008B8F8F /* route_button.png */,
@@ -291,6 +331,11 @@
 				431204D217345A2A008B8F8F /* route_button_hl.png in Resources */,
 				431204D317345A2A008B8F8F /* route_button.png in Resources */,
 				431204D517345D30008B8F8F /* checkmark_button.png in Resources */,
+				43C1D17217384A5A005D170A /* steepfaceicon.png in Resources */,
+				43C1D17417384A5F005D170A /* steepfaceicon@2x.png in Resources */,
+				43AFB90A17441E4F008AFE62 /* bolt_button_help.png in Resources */,
+				43AFB90B17441E4F008AFE62 /* route_button_help.png in Resources */,
+				43AFB90C17441E4F008AFE62 /* text_button_help.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,11 +355,16 @@
 				43A35C5E170771A50078F395 /* RouteList.m in Sources */,
 				43AB317B1716081500F3C69C /* RouteView.m in Sources */,
 				43E44028171CACC400516B44 /* UIView+findFirstResponder.m in Sources */,
-				4315138017285B3E005FB524 /* TestDraw.m in Sources */,
 				431513831728C8BD005FB524 /* RouteTableViewCell.m in Sources */,
 				431513861728CD91005FB524 /* InfoEditVC.m in Sources */,
 				4379B5EC1729076C0069133B /* RouteVC.m in Sources */,
 				43BD5D48173246C100031AC3 /* EditMenuGR.m in Sources */,
+				43F7FAA817359CD700A4E185 /* BoltHelpView.m in Sources */,
+				43F7FAAB17359CE200A4E185 /* RouteHelpView.m in Sources */,
+				43F7FAAE17359CED00A4E185 /* TextHelpView.m in Sources */,
+				43F7FAB117359D0300A4E185 /* HelpVC.m in Sources */,
+				43F7FAB41735D20E00A4E185 /* HelpView.m in Sources */,
+				43AFB90F174424AD008AFE62 /* RouteInfoVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
